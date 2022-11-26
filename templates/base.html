@@ -3,8 +3,8 @@
 <!doctype html>
 <html lang="en">
   <head>
-    {% block meta %}
     <!-- Required meta tags -->
+    {% block meta %}
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -12,28 +12,33 @@
     <meta name="author" content=""/>
     {% endblock %}
 
+    <!-- Extra meta tags -->
     {% block extra_meta %}
     {% endblock %}
     
-    {% block core_css %}
     <!-- Core Bootstrap CSS -->
+    {% block core_css %}
     <link href="{% static 'css/bootstrap_theme/bootstrap.css' %}" rel="stylesheet" type="text/css"/>
     {% endblock %}
 
+    <!-- Extra CSS -->
     {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/blocks.css' %}"/>
     <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
     {% endblock %}
 
-    
+    <!-- Core Bootstrap JS -->    
     {% block core_js %}
-    <!-- Core Bootstrap JS -->
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     {% endblock %}
 
+    <!-- Extra JS -->
     {% block extra_js %}
     {% endblock %}
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'image/favicon.svg' 'image' %}">
     
     <title>GreenSeed {% block extra_title %}{% endblock %}</title>
   </head>
