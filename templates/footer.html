@@ -1,4 +1,6 @@
-<footer class="bg-dark text-white"> 
+{% with url_name=request.resolver_match.url_name %}
+<footer class="bg-dark text-white {% if url_name == 'contact' %} fixed-bottom {% endif %}">
+    {% endwith %}
     <div class="container"> 
         <div class="pb-3 pt-3 small"> 
             <hr class="mt-0 "/> 

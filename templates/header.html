@@ -79,7 +79,7 @@
                     </li>
                     <li class="nav-item"> <a class="{% if url_name == 'about' %} active {% endif %} nav-link pb-lg-3 pe-lg-4 ps-lg-4 pt-lg-3" href="{% url 'about' %}">About Us</a> 
                     </li>
-                    <li class="nav-item"> <a class="nav-link pb-lg-3 pe-lg-4 ps-lg-4 pt-lg-3" href="#">Contact</a> 
+                    <li class="nav-item"> <a class="{% if url_name == 'contact' %} active {% endif %} nav-link pb-lg-3 pe-lg-4 ps-lg-4 pt-lg-3" href="{% url 'contact' %}">Contact</a> 
                     </li>
                     <li class="nav-item"> <a class="nav-link pb-lg-3 pe-lg-4 ps-lg-4 pt-lg-3" href="#">Shop</a> 
                     </li>
