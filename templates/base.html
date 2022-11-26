@@ -43,7 +43,7 @@
     <title>GreenSeed {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <!-- Header -->
+    <!-- Messages -->
     {% if messages %}
     <div class="message-container">
       {% for message in messages %}
@@ -54,14 +54,16 @@
     </div>
     {% endif %}
 
-    {% block header %}
-    {% endblock %}
-    
+    <!-- Header -->
+    {% include "header.html" %}
 
-    {% block content %}
-    <h1>Hello, world!</h1>
-    {% endblock %}
     
+    <!-- Content -->
+    {% block content %}
+    {% endblock %}
+
+    <!-- Footer -->
+    {% include "footer.html" %}    
 
     {% block postload_js %}
     {% endblock %}
