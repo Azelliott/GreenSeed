@@ -16,3 +16,21 @@ body {
     text-indent: 25px;
     border: 2px solid #d6d4d4;
 }
+
+#message-container {
+    position: relative;
+}
+
+
+/* Messages */
+#msg {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

@@ -8,6 +8,7 @@
             <path d="M0 134h1440v-74c-586 216-844-126-1440 0v74z"/>
         </svg>
     </div>
+    {% include "includes/messages.html" %}
     <section class="bg-light pb-5 pt-5 h-90" id="contact-container"> 
         <div class="container pb-4 pt-4"> 
             <div class="align-items-center row"> 
@@ -46,16 +47,9 @@
                 <div class="col-lg-6 ms-auto py-3"> 
                     <div class="bg-white p-4 p-lg-5 shadow" id="contact-form"> 
                         <h2 class="fw-bold h4 mb-4 text-uppercase">Send Us A message</h2> 
-                        <form> 
-                            <div class="mb-3"> 
-                                <input type="text" class="form-control rounded-10" placeholder="Enter name..."/> 
-                            </div>                                     
-                            <div class="mb-3"> 
-                                <input type="email" class="form-control rounded-10" placeholder="Enter email..."/> 
-                            </div>                                     
-                            <div class="mb-3"> 
-                                <textarea class="form-control rounded-0" rows="6" placeholder="Enter your message..."></textarea> 
-                            </div>                                     
+                        <form method="POST">
+                            {% csrf_token %} 
+                            {{ form.as_p }}                                   
                             <button type="submit" class="btn d-block w-100 btn-primary rounded-25 text-uppercase">Submit</button>                                     
                         </form>                                 
                     </div>                             

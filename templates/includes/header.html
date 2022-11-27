@@ -81,7 +81,7 @@
                     </li>
                     <li class="nav-item"> <a class="{% if url_name == 'contact' %} active {% endif %} nav-link pb-lg-3 pe-lg-4 ps-lg-4 pt-lg-3" href="{% url 'contact' %}">Contact</a> 
                     </li>
-                    <li class="nav-item"> <a class="nav-link pb-lg-3 pe-lg-4 ps-lg-4 pt-lg-3" href="#">Shop</a> 
+                    <li class="nav-item"> <a class="{% if url_name == 'shop' %} active {% endif %} nav-link pb-lg-3 pe-lg-4 ps-lg-4 pt-lg-3" href="{% url 'shop' %}">Shop</a> 
                     </li>
                     <li class="nav-item"> <a class="nav-link pb-lg-3 pe-lg-4 ps-lg-4 pt-lg-3" href="#"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.25em" height="1.25em">
                                 <path fill="none" d="M0 0h24v24H0z"></path>
