@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from datetime import date
+
 
 # Create your views here.
 def index(request):
@@ -11,7 +13,9 @@ def plants(request):
 
 def about(request):
     '''A view to return the about page'''
-    return render(request, 'home/about.html')
+    current_year = date.today().year
+    years = current_year - 2012
+    return render(request, 'home/about.html', {'years': years})
 
 def contact(request):
     '''A view to return the contact page'''
