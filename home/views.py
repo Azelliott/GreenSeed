@@ -2,17 +2,21 @@ from django.shortcuts import render
 from datetime import date
 from .forms import ContactForm
 from django.contrib import messages
+from django.http import HttpResponse
+from django.views.decorators.http import require_GET
 
 
-# Create your views here.
+# Index page
 def index(request):
     '''A view to return the index page'''
     return render(request, 'home/index.html')
 
+# Our plants page
 def plants(request):
     '''A view to return the plants page'''
     return render(request, 'home/plants.html')
 
+# About Us page
 def about(request):
     '''A view to return the about page'''
     current_year = date.today().year
@@ -35,7 +39,23 @@ def contact(request):
     return render(request, 'home/contact.html', {'form': form})
 
 
+# Online shop page
 def shop(request):
     '''A view to return the shop page'''
     return render(request, 'home/shop.html')
 
+
+# Robots.txt view
+@require_GET
+def robots_txt(request):
+    '''A view to return the robots.txt file'''
+    lines = [
+        "User-agent: *",
+        "Disallow: /admin/",
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain")
+
+
+# Custom 404 page
+def handler404(request, exception):
+    return render(request, 'home/404.html', status=404)

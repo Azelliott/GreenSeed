@@ -8,4 +8,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
     path('shop/', views.shop, name='shop'),
+    path('robots.txt', views.robots_txt, name='robots_txt'),
 ]
+
+handler404 = 'home.views.handler404'
