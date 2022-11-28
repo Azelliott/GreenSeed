@@ -17,12 +17,12 @@ body {
     border: 2px solid #d6d4d4;
 }
 
+
+/* Messages */
 #message-container {
     position: relative;
 }
 
-
-/* Messages */
 #msg {
     position: absolute;
     top: 0;
