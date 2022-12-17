@@ -1,20 +1,32 @@
 from django.shortcuts import render
 from datetime import date
-from .forms import ContactForm
+from .forms import ContactForm, NewsletterForm
 from django.contrib import messages
 from django.http import HttpResponse
 from django.views.decorators.http import require_GET
+from django.views.decorators.cache import never_cache
 
 
 # Index page
+@never_cache
 def index(request):
     '''A view to return the index page'''
-    return render(request, 'home/index.html')
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            messages.success(request, 'You have been added to our newsletter!')
+            form.save()
+            form = NewsletterForm()
+    else:
+        form = NewsletterForm()
+    return render(request, 'home/index.html', {'form': form})
+
 
 # Our plants page
 def plants(request):
     '''A view to return the plants page'''
     return render(request, 'home/plants.html')
+
 
 # About Us page
 def about(request):
@@ -64,3 +76,6 @@ def handler404(request, exception):
 def signup(request):
     '''A view to return the signup page'''
     return render(request, 'account/signup.html')
+
+
+

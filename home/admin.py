@@ -1,7 +1,8 @@
 from django.contrib import admin
-from .models import ContactForm
+from .models import ContactForm, NewsletterForm
 
-# Register your models here.
+
+# ContactFormAdmin
 class ContactFormAdmin(admin.ModelAdmin):
     list_display = (
         'name',
@@ -12,6 +13,23 @@ class ContactFormAdmin(admin.ModelAdmin):
 
     ordering = ('date_added',)
 
+    search_fields = ('name', 'email', 'message')
+    list_per_page = 25
+
+
 admin.site.register(ContactForm, ContactFormAdmin)
 
 
+# NewsletterFormAdmin
+class NewsletterFormAdmin(admin.ModelAdmin):
+    list_display = (
+        'email',
+        'date_added',
+    )
+
+    ordering = ('date_added',)
+    search_fields = ('email',)
+    list_per_page = 25
+
+
+admin.site.register(NewsletterForm, NewsletterFormAdmin)

@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <main>
     <section class="bg-secondary hero-block pb-5 position-relative text-white">
+        {% include "includes/messages.html" %}
         <div class="container pb-5 pt-5">
             <div class="align-items-center gx-lg-5 gy-4 row">
                 <div class="col-lg-6">
@@ -620,10 +622,11 @@
             <div class="col-md-6 col-xl-4 py-3"> 
                 <h2 class="fw-bold h5 mb-4 text-primary text-uppercase">NEWSLETTER</h2>
                 <p class="mb-3">Subscribe to our newsletter and get free guides and&nbsp; exclusive discounts.</p>
-                <form class="mb-4"> 
-                    <div class="bg-white border input-group p-1 rounded">
-                        <input type="email" class="border-0 form-control pe-3 ps-3" placeholder="Enter email..." aria-label="Recipient's email" aria-describedby="button-addon2" required/>
-                        <button class="btn btn-secondary pb-2 pe-4 ps-4 pt-2 rounded" type="submit" id="button-addon2" aria-label="submit">
+                <form class="mb-4" method="POST">
+                    {% csrf_token %}
+                    <div class="bg-white border input-group rounded">
+                        {{ form }}
+                        <button class="btn btn-secondary input-group-btn pb-2 pe-4 ps-4 pt-2 rounded" type="submit" id="button-addon2" aria-label="submit">
                             <svg viewBox="0 0 24 24" fill="currentColor" class="d-inline-block" height="16" width="16">
                                 <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
                             </svg>
@@ -637,3 +640,4 @@
     </div>             
 </section>
 {% endblock %}
+<input type="email" class="border-0 form-control pe-3 ps-3" placeholder="Enter email..." aria-label="Recipient's email" aria-describedby="button-addon2" required/>
