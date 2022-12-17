@@ -15,7 +15,8 @@ urlpatterns = [
     path('shop/', views.shop, name='shop'),
     path('robots.txt', views.robots_txt, name='robots_txt'),
     path('sitemap.xml', sitemap, {'sitemaps': {'home': homeSitemap}}),
-    path('signup/', views.signup, name='signup'),
+    path('accounts/login/', views.login, name='login'),
+    path('accounts/logout/', views.logout, name='logout'),
     ]
 
 handler404 = 'home.views.handler404'

@@ -42,6 +42,24 @@ body {
     height: 83.3vh;
 }
 
+#login-form input{
+    border-radius: 5%; /* Make the input boxes round */
+}
+
+#id_login {
+    display: flex;
+    flex-direction: column;
+  }
+
+#id_password {
+    display: flex;
+    flex-direction: column;
+  }
+  
+#login-form label {
+    margin-bottom: 0.5em;
+  }
+
 a{
     text-decoration:none !important;
     }

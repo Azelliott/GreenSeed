@@ -1,46 +1,91 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
-{% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block head_title %}{% trans "Log In" %}{% endblock %}
 
 {% block content %}
-
-<h1>{% trans "Sign In" %}</h1>
-
-{% get_providers as socialaccount_providers %}
-
-{% if socialaccount_providers %}
-<p>{% blocktrans with site.name as site_name %}Please sign in with one
-of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
-
-<div class="socialaccount_ballot">
-
-  <ul class="socialaccount_providers">
-    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
-
-  <div class="login-or">{% trans 'or' %}</div>
-
-</div>
-
-{% include "socialaccount/snippets/login_extra.html" %}
-
-{% else %}
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-{% endif %}
-
-<form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-</form>
+<main id="main-form" class="bg-secondary">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-5 mx-auto">
+            <div id="first">
+               <div class="myform form ">
+                  <div class="logo mb-3">
+                     <div class="col-md-12 text-center">
+                        <h1>Login</h1>
+                     </div>
+                  </div>
+                  {% include "includes/messages.html" %}
+                  <form action="{% url 'account_login' %}" method="post" name="login" id="login-form">
+                     {% csrf_token %}
+                     {{ form.as_p }}
+                     {% if redirect_field_value %}
+                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                     {% endif %}
+                     <div class="form-group">
+                        <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
+                     </div>
+                     <div class="col-md-12 text-center ">
+                        <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+                     </div>
+                     <div class="col-md-12 ">
+                        <div class="login-or">
+                           <hr class="hr-or">
+                           <span class="span-or">or</span>
+                        </div>
+                     </div>
+                     <div class="col-md-12 mb-3">
+                        <p class="text-center">
+                           <a href="javascript:void();" class="google btn mybtn"><i class="fa fa-google-plus">
+                           </i> Log in using Google
+                           </a>
+                        </p>
+                     </div>
+                     <div class="form-group">
+                        <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
+                     </div>
+                  </form>
+               </div>
+            </div>
+            <div id="second">
+               <div class="myform form ">
+                  <div class="logo mb-3">
+                     <div class="col-md-12 text-center">
+                        <h1 >Signup</h1>
+                     </div>
+                  </div>
+                  <form action="#" name="registration">
+                     <div class="form-group">
+                        <label for="exampleInputEmail1">First Name</label>
+                        <input type="text"  name="firstname" class="form-control" id="firstname" aria-describedby="emailHelp" placeholder="Enter Firstname">
+                     </div>
+                     <div class="form-group">
+                        <label for="exampleInputEmail1">Last Name</label>
+                        <input type="text"  name="lastname" class="form-control" id="lastname" aria-describedby="emailHelp" placeholder="Enter Lastname">
+                     </div>
+                     <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                     </div>
+                     <div class="form-group">
+                        <label for="exampleInputEmail1">Password</label>
+                        <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
+                     </div>
+                     <div class="col-md-12 text-center mb-3">
+                        <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Get Started For Free</button>
+                     </div>
+                     <div class="col-md-12 ">
+                        <div class="form-group">
+                           <p class="text-center"><a href="#" id="signin">Already have an account?</a></p>
+                        </div>
+                     </div>
+               </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
 
 {% endblock %}

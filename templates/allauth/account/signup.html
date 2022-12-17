@@ -5,20 +5,20 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<main id="main-form">
-<div class="container">
-  <div class="row">
-<div class="col-md-5 mx-auto">
-<div id="first">
-  <div class="myform form ">
-     <div class="logo mb-3">
-       <div class="col-md-12 text-center">
-        <h1>Login</h1>
-       </div>
-    </div>
-    {% include "includes/messages.html" %}
-             <form action="" method="post" name="login" id="signup-form">
-              {% csrf_token %}
+<main id="main-form" class="bg-secondary">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-5 mx-auto">
+            <div id="first">
+               <div class="myform form ">
+                  <div class="logo mb-3">
+                     <div class="col-md-12 text-center">
+                        <h1>Login</h1>
+                     </div>
+                  </div>
+                  {% include "includes/messages.html" %}
+                  <form action="" method="post" name="login" id="signup-form">
+                     {% csrf_token %}
                      <div class="form-group">
                         <label for="InputUsename">Username</label>
                         <input type="text" name="username"  class="form-control" id="email" aria-describedby="usernameHelp" placeholder="Enter username">
@@ -50,11 +50,10 @@
                         <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
                      </div>
                   </form>
-           
-  </div>
-</div>
-  <div id="second">
-      <div class="myform form ">
+               </div>
+            </div>
+            <div id="second">
+               <div class="myform form ">
                   <div class="logo mb-3">
                      <div class="col-md-12 text-center">
                         <h1 >Signup</h1>
@@ -85,13 +84,13 @@
                            <p class="text-center"><a href="#" id="signin">Already have an account?</a></p>
                         </div>
                      </div>
-                      </div>
-                  </form>
                </div>
-</div>
-</div>
-</div>   
-</main>   
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
 
 {% endblock %}
 <h1>{% trans "Sign Up" %}</h1>

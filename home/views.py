@@ -7,7 +7,8 @@ from django.views.decorators.http import require_GET
 from django.views.decorators.cache import never_cache
 
 
-# Index page
+# Index page, using the NewsletterForm model from forms.py
+# after submission success message is displayed
 @never_cache
 def index(request):
     '''A view to return the index page'''
@@ -70,12 +71,20 @@ def robots_txt(request):
 
 # Custom 404 page
 def handler404(request, exception):
+    '''A view to return the 404 page'''
     return render(request, 'home/404.html', status=404)
 
 
-def signup(request):
-    '''A view to return the signup page'''
-    return render(request, 'account/signup.html')
+# Login page
+def login(request):
+    '''A view to return the login page'''
+    return render(request, 'account/login.html')
+
+
+# Logout page
+def logout(request):
+    '''A view to return the logout page'''
+    return render(request, 'account/logout.html')
 
 
 
