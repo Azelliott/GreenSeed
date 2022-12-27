@@ -52,12 +52,6 @@ def contact(request):
     return render(request, 'home/contact.html', {'form': form})
 
 
-# Online shop page
-def shop(request):
-    '''A view to return the shop page'''
-    return render(request, 'home/shop.html')
-
-
 # Robots.txt view
 @require_GET
 def robots_txt(request):
