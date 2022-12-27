@@ -6,17 +6,31 @@
 
 {% block content %}
 
-<h1>{% trans "Sign Up" %}</h1>
-
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
-
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
+<main id="main-form" class="bg-secondary">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-5 mx-auto">
+            <div id="first">
+               <div class="myform form ">
+                  <div class="logo mb-3">
+                     <div class="col-md-12 text-center">
+                        <h1>{% trans "Sign Up" %}</h1>
+                     </div>
+                  </div>
+                  {% include "includes/messages.html" %}
+                  <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                     {% csrf_token %}
+                     {{ form.as_p }}
+                     {% if redirect_field_value %}
+                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                     {% endif %}
+                     <button class="btn btn-primary" type="submit">{% trans "Sign Up" %} &raquo;</button>
+                   </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+ </main>
 
 {% endblock %}
