@@ -1,0 +1,794 @@
+[
+   {
+      "model":"shop.Product",
+      "pk":1,
+      "fields":{
+         "category":1,
+         "name":"Ficus Bonsai Tree",
+         "description":"The ficus bonsai tree is known for its easy maintenance and strong, flexible branches. With its glossy leaves and diverse shaping options, it's a popular choice for bonsai enthusiasts.",
+         "price":39.99,
+         "rating":4.5
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":2,
+      "fields":{
+         "category":1,
+         "name":"Juniper Bonsai Tree",
+         "description":"A classic bonsai tree, the juniper is perfect for beginners. With its vibrant green foliage and unique shaping, it's sure to be a statement piece in any home or garden.",
+         "price":49.99,
+         "rating":4.7
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":3,
+      "fields":{
+         "category":1,
+         "name":"Chinese Elm Bonsai Tree",
+         "description":"The Chinese elm bonsai tree is a versatile and hardy species, perfect for beginners and experts alike. With its small, dark green leaves and graceful shaping, it's a true bonsai classic.",
+         "price":59.99,
+         "rating":4.9
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":4,
+      "fields":{
+         "category":1,
+         "name":"Japanese Maple Bonsai Tree",
+         "description":"The Japanese maple bonsai tree is a stunning addition to any collection. With its delicate, lacy leaves and elegant shaping, it's sure to impress. Requires a bit more maintenance than some other species.",
+         "price":70.00,
+         "rating":4.5
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":5,
+      "fields":{
+         "category":1,
+         "name":"Sago Palm Bonsai Tree",
+         "description":"The sago palm bonsai tree is a unique addition to any collection. With its thick, palm-like fronds and interesting shaping, it's sure to stand out. Requires a bit more maintenance than some other species.",
+         "price":90.00,
+         "rating":3.5
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":6,
+      "fields":{
+         "category":1,
+         "name":"Dwarf Jade Bonsai Tree",
+         "description":"A small, hardy jade tree trained and shaped to create a classic bonsai specimen.",
+         "price":50.00,
+         "rating":4.5
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":7,
+      "fields":{
+         "category":3,
+         "name":"Jade Plant Succulent",
+         "description":"The jade plant is a popular succulent known for its thick, glossy leaves and slow growth. It's a low-maintenance plant that's perfect for beginners.",
+         "price":14.99,
+         "rating":4.0
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":8,
+      "fields":{
+         "category":3,
+         "name":"Aloe Vera Succulent",
+         "description":"Aloe vera is a well-known succulent with medicinal properties. It's easy to care for and looks great in any home or office setting.",
+         "price":12.99,
+         "rating":4.5
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":9,
+      "fields":{
+         "category":3,
+         "name":"Echeveria",
+         "description":"Echeveria is a genus of flowering plants in the family Crassulaceae, native to semi-desert areas of Central America. Their colorful rosettes and low maintenance make them a popular choice for succulent enthusiasts.",
+         "price":14.99,
+         "rating":4.9
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":10,
+      "fields":{
+         "category":3,
+         "name":"Burro's Tail Succulent",
+         "description":"The burro's tail succulent, also known as Sedum morganianum, is a trailing plant with plump, blue-green leaves. Its low maintenance and ability to thrive in a range of lighting conditions make it a popular choice for indoor gardens.",
+         "price":19.99,
+         "rating":4.6
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":11,
+      "fields":{
+         "category":3,
+         "name":"Zebra Haworthia",
+         "description":"Zebra Haworthia is a small succulent with striped, pointed leaves and a slow growth rate. It's known for its striking appearance and is well-suited for indoor cultivation.",
+         "price":34.99,
+         "rating":4.5
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":12,
+      "fields":{
+         "category":3,
+         "name":"Hens and Chicks",
+         "description":"Hens and chicks is a hardy succulent that's perfect for outdoor gardens. Its small, rosette-shaped leaves will spread and multiply, creating a beautiful ground cover. Keep it in a sunny spot and water it once a week, allowing the soil to dry out completely between waterings.",
+         "price":19.99,
+         "rating":4.7
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":13,
+      "fields":{
+         "category":3,
+         "name":"String of Hearts",
+         "description":"String of Hearts, also known as Ceropegia woodii, is a trailing plant with heart-shaped leaves. It is a popular choice for hanging baskets and adds a touch of whimsy to any space.",
+         "price":14.99,
+         "rating":4.8
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":14,
+      "fields":{
+         "category":3,
+         "name":"String of Pearls",
+         "description":"String of Pearls, also known as Senecio rowleyanus, is a trailing plant with pearl-like leaves. It is a popular choice for hanging baskets and adds a touch of elegance to any space.",
+         "price":19.99,
+         "rating":4.7
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":15,
+      "fields":{
+         "category":3,
+         "name":"String of Turtles",
+         "description":"String of Turtles, also known as Ceropegia ottonis, is a trailing plant with turtle-shaped leaves. It is a popular choice for hanging baskets and adds a touch of whimsy to any space.",
+         "price":24.99,
+         "rating":4.6
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":16,
+      "fields":{
+         "category":3,
+         "name":"String of Bananas",
+         "description":"String of Bananas, also known as Ceropegia linearis subsp. woodii, is a trailing plant with banana-shaped leaves. It is a popular choice for hanging baskets and adds a touch of whimsy to any space.",
+         "price":29.99,
+         "rating":4.5
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":17,
+      "fields":{
+         "category":2,
+         "name":"Echinocactus grusonii",
+         "description":"Echinocactus grusonii, also known as the golden barrel cactus, is a species of cactus native to Mexico. It is known for its round shape and golden spines. It is a slow-growing cactus, but can reach up to 4 feet tall and wide in its natural habitat.",
+         "price":29.99,
+         "rating":4.0
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":18,
+      "fields":{
+         "category":2,
+         "name":"Opuntia microdasys",
+         "description":"Opuntia microdasys, also known as the bunny ears cactus, is a species of cactus native to Mexico. It is known for its small, round pads and white spines that resemble bunny ears. It is a fast-growing cactus and is often used as a houseplant.",
+         "price":19.99,
+         "rating":3.5
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":19,
+      "fields":{
+         "category":2,
+         "name":"Ferocactus latispinus",
+         "description":"Ferocactus latispinus, also known as the fishhook barrel cactus, is a species of cactus native to Mexico and the southwestern United States. It is known for its tall, cylindrical shape and long, curved spines. It is a slow-growing cactus and is often used as a decorative plant in gardens.",
+         "price":49.99,
+         "rating":4.0
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":20,
+      "fields":{
+         "category":2,
+         "name":"Cereus peruvianus",
+         "description":"Cereus peruvianus, also known as the Peruvian apple cactus, is a species of cactus native to South America. It is known for its tall, tree-like shape and white spines. It is a slow-growing cactus, but can reach up to 30 feet tall in its natural habitat.",
+         "price":79.99,
+         "rating":4.5
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":21,
+      "fields":{
+         "category":2,
+         "name":"Saguaro Cactus",
+         "description":"The saguaro cactus is native to the Sonoran Desert in Arizona and is known for its tall, tree-like appearance and white flowers. It is a popular choice for landscaping and as a subject in cactus collections.",
+         "price":24.99,
+         "rating":4.8
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":22,
+      "fields":{
+         "category":2,
+         "name":"Prickly Pear Cactus",
+         "description":"The prickly pear cactus is native to the Americas and is known for its flat, round pads and colorful flowers. It is a popular choice for landscaping and as a food source due to its edible fruit.",
+         "price":19.99,
+         "rating":4.7
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":23,
+      "fields":{
+         "category":2,
+         "name":"Golden Barrel Cactus",
+         "description":"The golden barrel cactus is native to Mexico and is known for its spherical shape and yellow spines. It is a popular choice for landscaping and as a subject in cactus collections due to its unique appearance.",
+         "price":29.99,
+         "rating":4.6
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":24,
+      "fields":{
+         "category":2,
+         "name":"Fishhook Cactus",
+         "description":"The fishhook cactus is native to the southwestern United States and is known for its long, curved spines. It is a popular choice for landscaping and as a subject in cactus collections due to its unique appearance.",
+         "price":19.99,
+         "rating":4.5
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":25,
+      "fields":{
+         "category":2,
+         "name":"Cholla Cactus",
+         "description":"The cholla cactus is native to the southwestern United States and is known for its cylindrical stems and spiky appearance. It is a popular choice for landscaping and as a subject in cactus collections due to its unique appearance.",
+         "price":24.99,
+         "rating":4.4
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":26,
+      "fields":{
+         "category":4,
+         "name":"Spider Plant",
+         "description":"The spider plant is a popular choice for indoors due to its ability to purify the air and its low maintenance needs. It has long, slender leaves and can grow in a variety of lighting conditions.",
+         "price":14.99,
+         "rating":4.5
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":27,
+      "fields":{
+         "category":4,
+         "name":"Pothos Plant",
+         "description":"The pothos plant is known for its ability to thrive in low light conditions and its ability to purify the air. It has heart-shaped leaves and can grow long, trailing vines.",
+         "price":19.99,
+         "rating":4.7
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":28,
+      "fields":{
+         "category":4,
+         "name":"Peace Lily",
+         "description":"The peace lily is a popular choice for indoors due to its ability to purify the air and its low maintenance needs. It has large, dark green leaves and delicate white flowers.",
+         "price":24.99,
+         "rating":4.6
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":29,
+      "fields":{
+         "category":4,
+         "name":"Rubber Plant",
+         "description":"The rubber plant is known for its large, glossy leaves and its ability to purify the air. It is a low maintenance plant that can thrive in a variety of lighting conditions.",
+         "price":29.99,
+         "rating":4.8
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":30,
+      "fields":{
+         "category":4,
+         "name":"Dracaena Plant",
+         "description":"The dracaena plant is a popular choice for indoors due to its ability to purify the air and its low maintenance needs. It has long, slender leaves and can grow in a variety of lighting conditions.",
+         "price":34.99,
+         "rating":4.9
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":31,
+      "fields":{
+         "category":3,
+         "name":"Snake Plant",
+         "description":"The snake plant is a hardy house plant that's known for its ability to purify the air. It's also known for its tall, thin leaves that are often striped or variegated. It's a low-maintenance plant that's easy to care for and can thrive in a variety of lighting conditions.",
+         "price":19.99,
+         "rating":4.9
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":32,
+      "fields":{
+         "category":4,
+         "name":"Chinese Evergreen",
+         "description":"The Chinese evergreen is a low-maintenance plant with glossy, dark green leaves. It is an excellent choice for beginners and can thrive in low light conditions.",
+         "price":24.99,
+         "rating":4.6
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":33,
+      "fields":{
+         "category":4,
+         "name":"Fiddle Leaf Fig",
+         "description":"The fiddle leaf fig is a popular house plant known for its large, glossy leaves. It requires bright, indirect light and regular watering to thrive.",
+         "price":39.99,
+         "rating":4.9
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":34,
+      "fields":{
+         "category":4,
+         "name":"Philodendron",
+         "description":"The philodendron is a popular houseplant known for its glossy, heart-shaped leaves and easy care. It can be grown in a variety of indoor conditions and is a great choice for beginners.",
+         "price":24.99,
+         "rating":4.0
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":35,
+      "fields":{
+         "category":5,
+         "name":"Venus Flytrap",
+         "description":"The Venus flytrap is a carnivorous plant native to the subtropical wetlands of North and South Carolina. It is known for its snapping traps that are triggered by insects. Careful watering and feeding are necessary for this plant to thrive.",
+         "price":14.99,
+         "rating":4.7
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":36,
+      "fields":{
+         "category":5,
+         "name":"Pitcher Plant",
+         "description":"The pitcher plant is a carnivorous plant that is native to the bogs and wetland areas of North and South America. It is named for the deep, pitcher-like structures on its leaves, which trap insects and small animals. These plants require special care and a specific type of soil to thrive.",
+         "price":19.99,
+         "rating":4.5
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":37,
+      "fields":{
+         "category":5,
+         "name":"Sundew",
+         "description":"The sundew is a small, carnivorous plant native to wetland areas around the world. It is known for its sticky, dew-like secretions that cover its leaves and trap insects. Sundews require special care and a specific type of soil to thrive.",
+         "price":9.99,
+         "rating":4.2
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":38,
+      "fields":{
+         "category":5,
+         "name":"Butterwort",
+         "description":"The butterwort is a small, carnivorous plant native to wetland areas in Europe and North America. It is named for the sticky, butter-like secretions on its leaves, which trap insects and small animals. These plants require special care and a specific type of soil to thrive.",
+         "price":12.99,
+         "rating":4.3
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":39,
+      "fields":{
+         "category":5,
+         "name":"Bladderwort",
+         "description":"Bladderworts are a type of carnivorous plant that capture and digest small aquatic animals using tiny, bladder-like traps. They are native to wetlands and damp grasslands.",
+         "price":39.99,
+         "rating":4.5
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":40,
+      "fields":{
+         "category":5,
+         "name":"Cobra Lily",
+         "description":"The Cobra Lily is a carnivorous plant native to the western United States. It gets its name from its hood-shaped leaves, which resemble the hood of a cobra. The plant traps insects with sticky mucilage on the surface of its leaves, which it then digests to obtain nutrients. The Cobra Lily is a unique and interesting addition to any plant collection.",
+         "price":29.99,
+         "rating":4.7
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":41,
+      "fields":{
+         "category":5,
+         "name":"Rainbow plant",
+         "description":"The Rainbow plant is a tropical plant native to the rainforests of Africa. It is known for its colorful, rainbow-hued leaves and delicate, lacy appearance. It is a low-maintenance plant that thrives in bright, indirect light and well-draining soil.",
+         "price":29.99,
+         "rating":4.5
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":42,
+      "fields":{
+         "category":5,
+         "name":"Aldrovanda vesiculosa",
+         "description":"Aldrovanda vesiculosa is a carnivorous plant native to wetlands and aquatic environments. It is known for its small, aquatic leaves that are lined with tiny, sticky tentacles that help it trap and digest insects. It requires a special, nutrient-poor soil mix and regular fertilization with live insects to thrive.",
+         "price":34.99,
+         "rating":4.0
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":43,
+      "fields":{
+         "category":5,
+         "name":"Cephalotus follicularis",
+         "description":"Cephalotus follicularis, also known as the Albany pitcher plant, is a carnivorous plant native to Western Australia. It is known for its small, pitcher-shaped leaves that are used to trap insects. It is a popular choice among carnivorous plant enthusiasts due to its unique appearance and ease of care.",
+         "price":29.99,
+         "rating":4.7
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":44,
+      "fields":{
+         "category":5,
+         "name":"Nepenthes spp.",
+         "description":"Nepenthes spp. are a group of carnivorous plants known for their unique pitcher-shaped leaves. These plants are native to Southeast Asia and are popular among plant enthusiasts for their exotic appearance and ability to capture and digest insects.",
+         "price":24.99,
+         "rating":4.7
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":45,
+      "fields":{
+         "category":6,
+         "name":"Hydrangea",
+         "description":"Hydrangeas are flowering shrubs with large, showy blooms that come in a variety of colors, including blue, pink, purple, and white. They are popular garden plants and are often used in landscaping and as cut flowers.",
+         "price":29.99,
+         "rating":4.7
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":46,
+      "fields":{
+         "category":6,
+         "name":"Rose",
+         "description":"Roses are flowering plants that are known for their beautiful, fragrant flowers. They come in a variety of colors and are often used in gardens, landscaping, and as cut flowers. There are many different types of roses, including hybrid teas, floribundas, and shrub roses.",
+         "price":24.99,
+         "rating":4.6
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":47,
+      "fields":{
+         "category":6,
+         "name":"Peony",
+         "description":"Peonies are flowering plants with large, showy blooms that come in a variety of colors, including white, pink, red, and yellow. They are popular garden plants and are often used in landscaping and as cut flowers.",
+         "price":19.99,
+         "rating":4.8
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":48,
+      "fields":{
+         "category":6,
+         "name":"Lavender",
+         "description":"Lavender is a fragrant flowering plant that is known for its distinctive purple flowers and calming scent. It is popular in gardens and landscaping, and is often used in aromatherapy and as a natural remedy for stress and anxiety.",
+         "price":14.99,
+         "rating":4.9
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":49,
+      "fields":{
+      "category":6,
+      "name":"Daylily",
+      "description":"Daylilies are a hardy perennial with long, thin leaves and trumpet-shaped flowers that come in a range of colors. They are easy to care for and thrive in a variety of soil conditions.",
+      "price":14.99,
+      "rating":4.0
+      }
+      },
+      {
+         "model":"shop.Product",
+         "pk":50,
+         "fields":{
+            "category":6,
+            "name":"Tulip",
+            "description":"Tulips are a popular spring garden plant with cup-shaped flowers in a range of colors. They thrive in well-draining soil with full sun exposure and make a beautiful addition to any garden.",
+            "price":19.99,
+            "rating":4.3
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":51,
+         "fields":{
+            "category":6,
+            "name":"Lilac",
+            "description":"Lilacs are a popular garden plant known for their fragrant purple or white flowers. They thrive in well-draining soil with full sun exposure and make a beautiful addition to any garden.",
+            "price":29.99,
+            "rating":4.7
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":52,
+         "fields":{
+            "category":6,
+            "name":"Sunflower",
+            "description":"The sunflower is a bright and cheerful plant that adds a pop of color to any garden. Its large, yellow flowers are a favorite of bees and birds, making it a great choice for a wildlife-friendly garden. Sunflowers are easy to grow and thrive in sunny, well-draining soil.",
+            "price":9.99,
+            "rating":4.5
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":53,
+         "fields":{
+            "category":6,
+            "name":"Iris",
+            "description":"The Iris is a popular garden plant known for its vibrant, showy flowers. It is a versatile plant that can thrive in a variety of soil and light conditions.",
+            "price":14.99,
+            "rating":4.5
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":54,
+         "fields":{
+            "category":6,
+            "name":"Marigold",
+            "description":"Marigolds are annual flowering plants known for their bright and cheerful flowers. They are easy to grow and make a great addition to any garden.",
+            "price":14.99,
+            "rating":4.5
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":55,
+         "fields":{
+            "category":7,
+            "name":"Small Ceramic Planter",
+            "description":"This small ceramic planter is perfect for smaller plants and adds a touch of elegance to any space. It measures 6 inches in diameter and 5 inches in height.",
+            "price":19.99,
+            "rating":4.7
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":56,
+         "fields":{
+            "category":7,
+            "name":"Large Terra Cotta Pot",
+            "description":"This large terra cotta pot is perfect for larger plants and adds a rustic touch to any space. It measures 12 inches in diameter and 9 inches in height.",
+            "price":29.99,
+            "rating":4.3
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":57,
+         "fields":{
+            "category":7,
+            "name":"Hanging Planter Basket",
+            "description":"This hanging planter basket is perfect for adding greenery to any space without taking up floor space. It measures 10 inches in diameter and 8 inches in height, and comes with a hanging chain.",
+            "price":24.99,
+            "rating":4.5
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":58,
+         "fields":{
+            "category":7,
+            "name":"Terracotta Pot",
+            "description":"This classic terracotta pot is perfect for a variety of plants. It has a natural, rustic look that adds charm to any garden.",
+            "price":12.99,
+            "rating":4.5
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":59,
+         "fields":{
+            "category":7,
+            "name":"Hanging Planter",
+            "description":"This hanging planter is perfect for small spaces or adding some greenery to your patio or balcony. It comes with a chain for easy hanging.",
+            "price":24.99,
+            "rating":4.3
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":60,
+         "fields":{
+            "category":7,
+            "name":"Self-Watering Planter",
+            "description":"This self-watering planter makes it easy to keep your plants hydrated. It has a built-in water reservoir that slowly releases water to the plants as needed.",
+            "price":29.99,
+            "rating":4.8
+         }
+      },
+      {
+         "model": "shop.Product",
+         "pk": 61,
+         "fields": {
+           "category": 7,
+           "name": "Succulent Planter",
+           "description": "This small planter is perfect for your favorite succulents. Its drainage hole and saucer help prevent excess moisture and promote healthy growth.",
+           "price": 19.99,
+           "rating": 4.5
+         }
+       },
+       {
+         "model":"shop.Product",
+         "pk":62,
+         "fields":{
+            "category":7,
+            "name":"Wooden Planter Box",
+            "description":"This rustic wooden planter box is perfect for any outdoor space. Its natural finish adds a touch of warmth to any plant. Available in a variety of sizes.",
+            "price":29.99,
+            "rating":4.3
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":63,
+         "fields":{
+            "category":8,
+            "name":"Organic All-Purpose Fertilizer",
+            "description":"This all-purpose fertilizer is made with natural ingredients and is suitable for use on a variety of plants. It helps promote healthy growth and strong roots.",
+            "price":9.99,
+            "rating":4.5
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":64,
+         "fields":{
+            "category":8,
+            "name":"Insect-Repelling Plant Spray",
+            "description":"Keep pesky insects away from your plants with this all-natural plant spray. It's safe for use on all types of plants and helps keep them healthy and bug-free.",
+            "price":7.99,
+            "rating":4.2
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":65,
+         "fields":{
+            "category":8,
+            "name":"Organic Pesticide Powder",
+            "description":"Eliminate unwanted insects from your garden with this organic pesticide powder. It's made with natural ingredients and is safe for use on all types of plants.",
+            "price":12.99,
+            "rating":4.7
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":66,
+         "fields":{
+            "category":8,
+            "name":"Natural All-Purpose Fertilizer",
+            "description":"This organic fertilizer is made from a blend of natural ingredients including bone meal, blood meal, and kelp. It is suitable for use on a wide range of plants and helps to promote healthy growth and strong roots.",
+            "price":14.99,
+            "rating":4.5
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":67,
+         "fields":{
+            "category":8,
+            "name":"Plant Pest Repellent",
+            "description":"Keep your plants safe from pests with this natural repellent. Made from a blend of essential oils, it is safe for use on all plants and helps to keep away common garden pests such as aphids, mites, and whiteflies.",
+            "price":12.99,
+            "rating":4.8
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":68,
+         "fields":{
+            "category":8,
+            "name":"Organic Insecticide",
+            "description":"Eliminate garden pests naturally with this organic insecticide. Made from a blend of plant extracts and essential oils, it is safe for use on all plants and helps to control a wide range of common garden pests.",
+            "price":16.99,
+            "rating":4.7
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":69,
+         "fields":{
+            "category":8,
+            "name":"Grow More Water Soluble Fertilizer",
+            "description":"A highly concentrated, water-soluble fertilizer that provides essential nutrients for healthy plant growth. Suitable for use on all plants, including vegetables, flowers, and houseplants.",
+            "price":14.99,
+            "rating":4.5
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":70,
+         "fields":{
+            "category":8,
+            "name":"Espoma Organic Flower Tone Fertilizer",
+            "description":"A premium organic fertilizer that provides a balanced blend of nutrients and trace minerals for healthy flower growth. Made from all natural, sustainable ingredients.",
+            "price":9.99,
+            "rating":4.2
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":71,
+         "fields":{
+            "category":8,
+            "name":"Safer Brand Insect Killing Soap",
+            "description":"An all-natural, organic insecticide that safely and effectively controls and eliminates a variety of common garden pests. Suitable for use on all plants, including vegetables, flowers, and houseplants.",
+            "price":8.99,
+            "rating":4.7
+         }
+      },
+      {
+         "model":"shop.Product",
+         "pk":72,
+         "fields":{
+            "category":8,
+            "name":"Neem Oil Pesticide and Fungicide",
+            "description":"A multi-purpose, natural pest control solution that effectively controls and eliminates a wide range of insects and diseases. Suitable for use on all plants, including vegetables, flowers, and houseplants.",
+            "price":11.99,
+            "rating":4.5
+         }
+      }
+]
