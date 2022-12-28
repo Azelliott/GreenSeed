@@ -1,0 +1,82 @@
+[
+   {
+      "model":"shop.Category",
+      "pk":1,
+      "fields":{
+         "name":"bonsai",
+         "friendly_name":"Bonsai",
+         "description":"Trees or shrubs that are trained to grow in a small, shallow pot and are pruned and shaped to resemble a mature tree.",
+         "slug":"bonsai"
+      }
+   },
+   {
+      "model":"shop.Category",
+      "pk":2,
+      "fields":{
+         "name":"cacti",
+         "friendly_name":"Cacti",
+         "description":"Plants that are adapted to dry, desert environments and have thick, fleshy stems and spines.",
+         "slug":"cacti"
+      }
+   },
+   {
+      "model":"shop.Category",
+      "pk":3,
+      "fields":{
+         "name":"succulents",
+         "friendly_name":"Succulents",
+         "description":"Succulents are plants that store water in their leaves, stems, and roots.",
+         "slug":"succulents"
+      }
+   },
+   {
+      "model":"shop.Category",
+      "pk":4,
+      "fields":{
+         "name":"house_plants",
+         "friendly_name":"House Plants",
+         "description":"A variety of plants that are well-suited for indoor cultivation",
+         "slug":"house-plants"
+      }
+   },
+   {
+      "model":"shop.Category",
+      "pk":5,
+      "fields":{
+         "name":"carnivorous_plants",
+         "friendly_name":"Carnivorous Plants",
+         "description":"Plants that capture and digest insects or other small animals.",
+         "slug":"carnivorous-plants"
+      }
+   },
+   {
+      "model":"shop.Category",
+      "pk":6,
+      "fields":{
+         "name":"garden_plants",
+         "friendly_name":"Garden Plants",
+         "description":"A variety of plants that are well-suited for outdoor cultivation in gardens.",
+         "slug":"garden-plants"
+      }
+   },
+   {
+      "model":"shop.Category",
+      "pk":7,
+      "fields":{
+         "name":"pots_and_planters",
+         "friendly_name":"Pots and Planters",
+         "description":"A variety of pots and planters for your plants, including indoor and outdoor options.",
+         "slug":"pots-and-planters"
+      }
+   },
+   {
+      "model":"shop.Category",
+      "pk":8,
+      "fields":{
+         "name":"fertilizers_and_pesticides",
+         "friendly_name":"Fertilizers and Pesticides",
+         "description":"A range of fertilizers and pesticides to help you care for your plants.",
+         "slug":"fertilizers-and-pesticides"
+      }
+   }
+]

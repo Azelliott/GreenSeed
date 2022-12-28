@@ -152,6 +152,7 @@ a{
     flex-direction: column;
     }
 
+/* Navbar for Shop*/
 .navbar .dropdown:hover > .dropdown-menu {
     display: block;
     }

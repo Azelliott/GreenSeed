@@ -5,7 +5,9 @@ from .models import Category, Product
 # CategoryAdmin
 class CategoryAdmin(admin.ModelAdmin):
     '''CategoryAdmin'''
+    readonly_fields = ('id',)
     list_display = (
+        'id',
         'name',
         'friendly_name',
         'description',
@@ -23,8 +25,14 @@ admin.site.register(Category, CategoryAdmin)
 # ProductAdmin
 class ProductAdmin(admin.ModelAdmin):
     '''ProductAdmin'''
+
+    def category_name(self, obj):
+        return obj.category.name
+    category_name.admin_order_field = 'category__name'
+    category_name.short_description = 'Category'
+
     list_display = (
-        'category',
+        'category_name',
         'name',
         'description',
         'price',

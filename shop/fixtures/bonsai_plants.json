@@ -1,0 +1,68 @@
+[
+   {
+      "model":"shop.Product",
+      "pk":1,
+      "fields":{
+         "category":1,
+         "name":"Ficus Bonsai Tree",
+         "description":"The ficus bonsai tree is known for its easy maintenance and strong, flexible branches. With its glossy leaves and diverse shaping options, it's a popular choice for bonsai enthusiasts.",
+         "price":39.99,
+         "rating":4.5
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":2,
+      "fields":{
+         "category":1,
+         "name":"Juniper Bonsai Tree",
+         "description":"A classic bonsai tree, the juniper is perfect for beginners. With its vibrant green foliage and unique shaping, it's sure to be a statement piece in any home or garden.",
+         "price":49.99,
+         "rating":4.7
+      }
+   },
+   {
+      "model":"shop.Product",
+      "pk":3,
+      "fields":{
+         "category":1,
+         "name":"Chinese Elm Bonsai Tree",
+         "description":"The Chinese elm bonsai tree is a versatile and hardy species, perfect for beginners and experts alike. With its small, dark green leaves and graceful shaping, it's a true bonsai classic.",
+         "price":59.99,
+         "rating":4.9
+      }
+   },
+   {
+    "model":"shop.Product",
+    "pk":4,
+    "fields":{
+       "category":1,
+       "name":"Japanese Maple Bonsai Tree",
+       "description":"The Japanese maple bonsai tree is a stunning addition to any collection. With its delicate, lacy leaves and elegant shaping, it's sure to impress. Requires a bit more maintenance than some other species.",
+       "price":70.00,
+       "rating":4.5
+    }
+    },
+    {
+        "model":"shop.Product",
+        "pk":5,
+        "fields":{
+           "category":1,
+           "name":"Sago Palm Bonsai Tree",
+           "description":"The sago palm bonsai tree is a unique addition to any collection. With its thick, palm-like fronds and interesting shaping, it's sure to stand out. Requires a bit more maintenance than some other species.",
+           "price":90.00,
+           "rating":3.5
+        }
+     },
+     {
+        "model":"shop.Product",
+        "pk":6,
+        "fields":{
+           "category":1,
+           "name":"Dwarf Jade Bonsai Tree",
+           "description":"A small, hardy jade tree trained and shaped to create a classic bonsai specimen.",
+           "price":50.00,
+           "rating":4.5
+        }
+     }
+]
