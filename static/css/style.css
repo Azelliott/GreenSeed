@@ -156,3 +156,7 @@ a{
 .navbar .dropdown:hover > .dropdown-menu {
     display: block;
     }
+
+.card {
+    width: 250px;
+}

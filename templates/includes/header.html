@@ -84,7 +84,7 @@
                     <li class="nav-item dropdown">
                         <a class="{% if url_name == 'shop' %} active {% endif %} nav-link pb-lg-3 pe-lg-4 ps-lg-4 pt-lg-3 dropdown-toggle" href="{% url 'shop' %}" id="navbarDropdownMenuLink-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink-2">
-                            <a class="dropdown-item" href="#">All products</a>
+                            <a class="dropdown-item" href="{% url 'shop-products' %}">All products</a>
                             <a class="dropdown-item" href="#">Plants</a>
                             <a class="dropdown-item" href="#">Accessories</a>
                         </div>
