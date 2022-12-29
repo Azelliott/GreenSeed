@@ -663,7 +663,7 @@
          "model": "shop.Product",
          "pk": 61,
          "fields": {
-           "category": 7,
+           "category":7,
            "name": "Succulent Planter",
            "description": "This small planter is perfect for your favorite succulents. Its drainage hole and saucer help prevent excess moisture and promote healthy growth.",
            "price": 19.99,

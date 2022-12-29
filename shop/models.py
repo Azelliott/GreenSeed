@@ -39,7 +39,7 @@ class Product(models.Model):
                               validators=[FileExtensionValidator(['png', 'jpg',
                                                                  'jpeg']),
                                           MinLengthValidator(1024)],
-                              default='default/not-found.jpg')
+                              default='static/default/not-found.jpg')
     availability = models.BooleanField(default=True)
     rating = models.DecimalField(max_digits=2, decimal_places=1, null=True,
                                  blank=True)
@@ -47,9 +47,6 @@ class Product(models.Model):
     def get_category_name(self):
         '''Returns the name of the category'''
         return self.category.name
-
-    def __str__(self):
-        return self.name
 
     def get_friendly_name(self):
         return self.friendly_name
@@ -65,3 +62,6 @@ class Product(models.Model):
 
     def __str__(self):
         return str(self.rating)
+
+    def __str__(self):
+        return self.name
