@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+        <main>
+            <div class="container"> 
+                <div class="row height d-flex justify-content-center align-items-center" style="margin-top: 35px; margin-bottom: 25px;"> 
+                    <div class="col-md-8"> 
+                        <div class="search input-group"> <i class="fa fa-search"></i> 
+                            <input type="text" class="form-control rounded-start" placeholder="I'm looking for..."/> 
+                            <button class="btn btn-primary rounded-left">Search</button>                             
+                        </div>                         
+                    </div>                     
+                </div>                 
+            </div>
+            <div class="container pb-4 pt-4">
+                <div class="align-items-center row">
+                    <div class="col">
+                        <hr class="border-secondary mb-0 mt-0"/> 
+                    </div>
+                    <div class="col-auto">
+                        <h2 class="fw-bold h4 mb-0 text-uppercase">ALL PRODUCTS</h2> 
+                    </div>
+                    <div class="col">
+                        <hr class="border-secondary mb-0 mt-0"/> 
+                    </div>
+                </div>
+            </div>
+            <div class="product-details-container" style="min-height: 500px; overflow-y: auto;">
+                <div class="container mt-5">
+                    <div class="row">
+                    <div class="col-lg-5">
+                        <img src="{{ product.image.url }}" alt="Product Image" class="img-fluid">
+                    </div>
+                    <div class="col-lg-7">
+                        <h2 class="h3 mb-3">{{ product.name }}</h2>
+                        <p>{{ product.description }}</p>
+                        {% if product.rating %}
+                        <p>Rating: {{ product.rating }}/5</p>
+                        {% endif %}
+                        {% if product.availability %}
+                        <p>Availability: In Stock</p>
+                        {% else %}
+                        <p>Availability: Out of Stock</p>
+                        {% endif %}
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    {% endblock %}

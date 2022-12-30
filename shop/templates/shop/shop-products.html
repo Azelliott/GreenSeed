@@ -6,10 +6,14 @@
             <div class="container"> 
                 <div class="row height d-flex justify-content-center align-items-center" style="margin-top: 35px; margin-bottom: 25px;"> 
                     <div class="col-md-8"> 
-                        <div class="search input-group"> <i class="fa fa-search"></i> 
-                            <input type="text" class="form-control rounded-start" placeholder="I'm looking for..."/> 
-                            <button class="btn btn-primary rounded-left">Search</button>                             
-                        </div>                         
+                        <form method="POST" action="{% url 'shop-products' 'all-products' %}">
+                            {% csrf_token %}
+                            <div class="search input-group">
+                                <i class="fa fa-search"></i> 
+                                <input type="text" name="search_query" class="form-control rounded-start" placeholder="I'm looking for..."/> 
+                                <button class="btn btn-primary rounded-left">Search</button>                             
+                            </div>
+                        </form>                  
                     </div>                     
                 </div>                 
             </div>
@@ -33,7 +37,7 @@
                         {% for product in products %}
                             <div class="col-6 col-lg-3 col-md-4 pb-3 pt-3"> 
                                 <div class="card">
-                                    <a href="#" class="d-block mb-3">
+                                    <a href="{% url 'product-details' product.id %}" class="d-block mb-3">
                                         {% if product.image %}
                                             <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid w-100" width="500" height="700"/>
                                         {% else %}

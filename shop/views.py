@@ -12,9 +12,18 @@ def shop(request):
 
 
 # Online shop products page
-def shop_products(request, category_slug=None):
+def shop_products(request, category_slug=None, search_query=None):
     '''A view to return the shop products page'''
     products = Product.objects.all()
+
+    search_query = request.POST.get('search_query')
+
+        # Filter the products based on the search query
+    if search_query:
+        products = products.filter(
+            Q(name__icontains=search_query) | 
+            Q(description__icontains=search_query)
+        )
 
     if category_slug == 'plants':
         # Create a Q object for each category in the list
@@ -51,3 +60,13 @@ def shop_products(request, category_slug=None):
         'products': products,
     }
     return render(request, 'shop/shop-products.html', context)
+
+
+# Product detail page
+def product_details(request, product_id):
+    '''A view to return the product detail page'''
+    product = get_object_or_404(Product, pk=product_id)
+    context = {
+        'product': product,
+    }
+    return render(request, 'shop/product-details.html', context)
