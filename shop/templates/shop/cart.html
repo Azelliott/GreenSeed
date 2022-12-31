@@ -7,17 +7,18 @@
   <div class="container">
     <h1 class="text-center mb-4">Cart</h1>
 
-    {% if cart %}
-    {% for product_id, quantity in cart.items %}
+    {% if cart_items %}
+    {% for item in cart_items %}
         <div class="row align-items-center mb-4">
         <div class="col-12 col-md-3">
             <img src="{{ product.image }}" class="img-fluid">
         </div>
+        {{ cart_items }}
         <div class="col-12 col-md-9">
-            <h3>{{ product.name }}</h3>
-            <p>Quantity: {{ quantity }}</p>
-            <p>Price: ${{ product.price }}</p>
-            <form method="POST" action="#">
+            <h3>{{ item.product }}</h3>
+            <p>Quantity: {{ item.quantity }}</p>
+            <p>Price: ${{ item.product.price }}</p>
+            <form method="POST" action="{% url 'remove_item' %}">
             {% csrf_token %}
             <input type="hidden" name="product_id" value="{{ product.id }}">
             <button type="submit" class="btn btn-danger" name="remove">Remove</button>
