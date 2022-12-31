@@ -1,0 +1,14 @@
+<div class="container"> 
+    <div class="row height d-flex justify-content-center align-items-center" style="margin-top: 35px; margin-bottom: 25px;"> 
+        <div class="col-md-8"> 
+            <form method="GET" action="{% url 'shop-products' 'all-products' %}">
+                {% csrf_token %}
+                <div class="search input-group">
+                    <i class="fa fa-search"></i> 
+                    <input type="text" name="search_query" class="form-control rounded-start" placeholder="I'm looking for..."/> 
+                    <button class="btn btn-primary rounded-left">Search</button>                             
+                </div>
+            </form>                 
+        </div>                     
+    </div>                 
+</div>
