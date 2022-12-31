@@ -19,9 +19,9 @@
             <p>Quantity: {{ item.quantity }}</p>
             <p>Price: ${{ item.product.price }}</p>
             <form method="POST" action="{% url 'remove_item' %}">
-            {% csrf_token %}
-            <input type="hidden" name="product_id" value="{{ product.id }}">
-            <button type="submit" class="btn btn-danger" name="remove">Remove</button>
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="{{ item.product.id }}">
+                <button type="submit" class="btn btn-danger" name="remove">Remove</button>
             </form>
         </div>
         </div>

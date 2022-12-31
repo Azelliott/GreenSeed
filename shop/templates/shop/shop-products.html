@@ -6,7 +6,7 @@
             <div class="container"> 
                 <div class="row height d-flex justify-content-center align-items-center" style="margin-top: 35px; margin-bottom: 25px;"> 
                     <div class="col-md-8"> 
-                        <form method="POST" action="{% url 'shop-products' 'all-products' %}">
+                        <form method="GET" action="{% url 'shop-products' 'all-products' %}">
                             {% csrf_token %}
                             <div class="search input-group">
                                 <i class="fa fa-search"></i> 

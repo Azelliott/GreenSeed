@@ -15,8 +15,9 @@ def shop(request):
 def shop_products(request, category_slug=None, search_query=None):
     '''A view to return the shop products page'''
     products = Product.objects.all()
+    search_query = request.GET.get('search_query')
 
-        # Filter the products based on the search query
+    # Filter the products based on the search query
     if search_query:
         products = products.filter(
             Q(name__icontains=search_query) | 
@@ -25,7 +26,8 @@ def shop_products(request, category_slug=None, search_query=None):
 
     if category_slug == 'plants':
         # Create a Q object for each category in the list
-        plants_categories = ['bonsai', 'cacti', 'succulents', 'house_plants', 'garden_plants', 'carnivorous_plants']
+        plants_categories = ['bonsai', 'cacti', 'succulents', 'house_plants',
+                             'garden_plants', 'carnivorous_plants']
         q_objects = [Q(category__slug=category) for category in plants_categories]
         # Combine the Q objects using an OR operator
         combined_q = Q()
@@ -35,7 +37,8 @@ def shop_products(request, category_slug=None, search_query=None):
         products = products.filter(combined_q)
     elif category_slug == 'accessories':
         # Create a Q object for each category in the list
-        accessories_categories = ['pots-and-planters', 'fertilizers-and-pesticides']
+        accessories_categories = ['pots-and-planters',
+                                  'fertilizers-and-pesticides']
         q_objects = [Q(category__slug=category) for category in accessories_categories]
         # Combine the Q objects using an OR operator
         combined_q = Q()
@@ -70,12 +73,15 @@ def product_details(request, product_id):
     return render(request, 'shop/product-details.html', context)
 
 
+# View cart page
 def view_cart(request):
     """View the contents of the user's cart."""
     cart = request.session.get('cart', {})
 
     return render(request, 'shop/cart.html', {'cart': cart})
 
+
+# Add item to cart
 def add_item(request, product_id):
     """Add an item to the user's cart."""
     quantity = int(request.POST.get('quantity'))
@@ -93,14 +99,13 @@ def add_item(request, product_id):
     return redirect(redirect_url)
 
 
-def remove_item(request, product_id):
-    """Remove an item from the user's cart."""
+# Remove item from cart
+def remove_item(request):
+    product_id = request.POST.get('product_id')
     product = get_object_or_404(Product, pk=product_id)
     cart = request.session.get('cart', {})
-    cart.remove_item(product)
-    request.session['cart'] = cart
+    if product_id in cart:
+        del cart[product_id]
+        request.session['cart'] = cart
+    print(product_id)
     return redirect('view_cart')
-
-
-    #for key in request.session.keys():
-    #    del request.session[key]
