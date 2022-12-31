@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
-from .models import Product, Category
+from .models import Product
 
 
 # Online shop page
@@ -15,8 +15,6 @@ def shop(request):
 def shop_products(request, category_slug=None, search_query=None):
     '''A view to return the shop products page'''
     products = Product.objects.all()
-
-    search_query = request.POST.get('search_query')
 
         # Filter the products based on the search query
     if search_query:
@@ -70,3 +68,39 @@ def product_details(request, product_id):
         'product': product,
     }
     return render(request, 'shop/product-details.html', context)
+
+
+def view_cart(request):
+    """View the contents of the user's cart."""
+    cart = request.session.get('cart', {})
+
+    return render(request, 'shop/cart.html', {'cart': cart})
+
+def add_item(request, product_id):
+    """Add an item to the user's cart."""
+    quantity = int(request.POST.get('quantity'))
+    redirect_url = request.POST.get('redirect_url')
+    cart = request.session.get('cart', {})
+
+    if product_id in list(cart.keys()):
+        cart[product_id] += quantity
+    else:
+        cart[product_id] = quantity
+
+    request.session['cart'] = cart
+
+    print(request.session['cart'])
+    return redirect(redirect_url)
+
+
+def remove_item(request, product_id):
+    """Remove an item from the user's cart."""
+    product = get_object_or_404(Product, pk=product_id)
+    cart = request.session.get('cart', {})
+    cart.remove_item(product)
+    request.session['cart'] = cart
+    return redirect('view_cart')
+
+
+    #for key in request.session.keys():
+    #    del request.session[key]

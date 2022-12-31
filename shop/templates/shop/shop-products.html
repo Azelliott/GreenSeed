@@ -45,9 +45,9 @@
                                         {% endif %}
                                     </a>
                                     <div class="card-body">
-                                        <a href="#" class="d-inline-block mb-2 small text-secondary">{{ product.name }}</a>
+                                        <a href="{% url 'product-details' product.id %}" class="d-inline-block mb-2 small text-secondary">{{ product.name }}</a>
                                         {% if product.description %}
-                                        <p class="card-text">{{ product.description|truncatewords:20 }} <a href="#" class="text-secondary">See more</a></p>
+                                        <p class="card-text">{{ product.description|truncatewords:20 }} <a href="{% url 'product-details' product.id %}" class="text-secondary">See more</a></p>
                                         {% endif %}
                                         <div class="d-flex justify-content-between align-items-center">
                                           <div class=""><span class="h6 text-danger">€{{ product.price }}</span></div>

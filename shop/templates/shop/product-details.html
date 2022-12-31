@@ -43,7 +43,13 @@
                         {% else %}
                         <p>Availability: Out of Stock</p>
                         {% endif %}
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <form method="POST" action="{% url 'add_item' product.id %}">
+                            {% csrf_token %}
+                            <label for="quantity">Quantity:</label>
+                            <input type="number" name="quantity" value="1" min="1">
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            <button type="submit" class="btn btn-sm btn-outline-secondary">Add to cart</button>
+                          </form>
                     </div>
                     </div>
                 </div>
