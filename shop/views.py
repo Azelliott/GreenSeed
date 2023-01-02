@@ -156,5 +156,10 @@ def update_cart(request):
         free_delivery_delta = 0
 
     grand_total = delivery + cart_total
+    # Calculate the line total for the product
+    line_total = product.price * quantity
 
-    return JsonResponse({'cart_total': cart_total, 'grand_total': round(grand_total, 2)})
+    return JsonResponse({'cart_total': cart_total,
+                         'grand_total': round(grand_total, 2),
+                         'line_total': line_total,
+                         })

@@ -14,10 +14,12 @@
         'quantity': newQuantity
         },
         success: function(response) {
-// Update the cart total and grand total on the page
-$('#cart-total').text(response.cart_total);
-$('#grand-total').text(response.grand_total);
-}
+        // Update the cart total and grand total on the page
+        $('#cart-total').text(response.cart_total);
+        $('#grand-total').html("&euro;" + response.grand_total);
+        $('#line-total-' + productId).html("€" + response.line_total);
+        },
+        
         
         });
         }

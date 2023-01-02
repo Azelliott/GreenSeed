@@ -35,7 +35,7 @@
                     </div>
                   </td>
                 <td>€{{ item.product.price }}</td>
-                <td>€{{ item.line_total }}</td>
+                <td><span id="line-total-{{ item.product.id }}">€{{ item.line_total }}</span></td>
                 <td>
                     <div class="btn-group btn-group-sm">
                       <form method="POST" action="{% url 'remove_item' %}">
