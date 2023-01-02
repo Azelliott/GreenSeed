@@ -29,6 +29,7 @@ def cart_contents(request):
 
     grand_total = delivery + total
 
+
     context = {
         'cart_items': cart_items,
         'total': total,

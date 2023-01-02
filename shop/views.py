@@ -94,7 +94,6 @@ def product_details(request, product_id):
 def view_cart(request):
     '''A view to return the view cart page'''
     cart = request.session.get('cart', {})
-    print(cart)
     return render(request, 'shop/cart.html', {'cart': cart})
 
 
@@ -143,9 +142,12 @@ def update_cart(request):
 
     # Calculate the cart total
     cart_total = Decimal('0.00')
+    line_totals = []
     for product_id, quantity in cart.items():
         product = get_object_or_404(Product, pk=product_id)
         cart_total += product.price * quantity
+        line_total = quantity * product.price
+        line_totals.append(line_total)
 
     # Calculate the delivery and grand total
     if cart_total < settings.FREE_DELIVERY_THRESHOLD:
@@ -161,5 +163,5 @@ def update_cart(request):
 
     return JsonResponse({'cart_total': cart_total,
                          'grand_total': round(grand_total, 2),
-                         'line_total': line_total,
+                         'line_totals': line_totals,
                          })
