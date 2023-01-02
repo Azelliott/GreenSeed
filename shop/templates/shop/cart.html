@@ -4,38 +4,46 @@
 
 {% block content %}
 <main>
-  <div class="container">
-    <h1 class="text-center mb-4">Cart</h1>
-
-    {% if cart_items %}
-    {% for item in cart_items %}
-        <div class="row align-items-center mb-4">
-        <div class="col-12 col-md-3">
-            <img src="{{ product.image }}" class="img-fluid">
+    <div class="container">
+      <h1 class="text-center mb-4">Cart</h1>
+      {% if cart_items %}
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Price</th>
+              <th scope="col">Total</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in cart_items %}
+              <tr>
+                <td>{{ item.product }}</td>
+                <td><input type="number" min="1" value="{{ item.quantity }}" id="quantity-{{ item.product.id }}" class="form-control form-control-sm" onchange="updateQuantity(this, {{ item.product.id }})"></td>
+                <td>€{{ item.product.price }}</td>
+                <td>€{{ item.line_total }}</td>
+                <td>
+                    <form method="POST" action="{% url 'remove_item' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="product_id" value="{{ item.product.id }}">
+                        <button type="submit" class="btn btn-danger btn-sm" name="remove">Remove</button>
+                      </form>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <div class="row justify-content-end mb-4">
+          <div class="col-12 col-md-4">
+            <p>Total: €{{ total }}</p>
+            <a href="#" class="btn btn-primary btn-block">Checkout</a>
+          </div>
         </div>
-        {{ cart_items }}
-        <div class="col-12 col-md-9">
-            <h3>{{ item.product }}</h3>
-            <p>Quantity: {{ item.quantity }}</p>
-            <p>Price: ${{ item.product.price }}</p>
-            <form method="POST" action="{% url 'remove_item' %}">
-                {% csrf_token %}
-                <input type="hidden" name="product_id" value="{{ item.product.id }}">
-                <button type="submit" class="btn btn-danger" name="remove">Remove</button>
-            </form>
-        </div>
-        </div>
-  {% endfor %}
-
-    <div class="row justify-content-end mb-4">
-        <div class="col-12 col-md-4">
-        <p>Total: ${{ cart.get_total }}</p>
-        <a href="#" class="btn btn-primary btn-block">Checkout</a>
-        </div>
+      {% else %}
+        <p>Your cart is empty</p>
+      {% endif %}
     </div>
-    {% else %}
-      <p>Your cart is empty</p>
-    {% endif %}
-  </div>
-</main>
+  </main>
 {% endblock %}

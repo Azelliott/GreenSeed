@@ -75,7 +75,7 @@ def product_details(request, product_id):
 
 # View cart page
 def view_cart(request):
-    """View the contents of the user's cart."""
+    '''A view to return the view cart page'''
     cart = request.session.get('cart', {})
 
     return render(request, 'shop/cart.html', {'cart': cart})
@@ -83,7 +83,7 @@ def view_cart(request):
 
 # Add item to cart
 def add_item(request, product_id):
-    """Add an item to the user's cart."""
+    '''Add a quantity of the specified product to the cart'''
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
@@ -101,8 +101,8 @@ def add_item(request, product_id):
 
 # Remove item from cart
 def remove_item(request):
+    '''Remove the item from the cart'''
     product_id = request.POST.get('product_id')
-    product = get_object_or_404(Product, pk=product_id)
     cart = request.session.get('cart', {})
     if product_id in cart:
         del cart[product_id]
