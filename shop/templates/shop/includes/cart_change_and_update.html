@@ -14,14 +14,14 @@
         'quantity': newQuantity
         },
         success: function(response) {
-        // Update the cart total on the page
-        $('#cart-total').text(response.cart_total);
-        }
+// Update the cart total and grand total on the page
+$('#cart-total').text(response.cart_total);
+$('#grand-total').text(response.grand_total);
+}
+        
         });
         }
 
-</script>
-<script>
     document.addEventListener('DOMContentLoaded', function() {
         // Select all increment and decrement buttons
         const decrementBtns = document.querySelectorAll('#decrement-quantity');
@@ -35,6 +35,7 @@
         let currentQuantity = parseInt(inputField.value);
         if (currentQuantity > 1) {
         inputField.value = currentQuantity - 1;
+        updateQuantity(inputField);
         }
         });
         });
@@ -44,6 +45,7 @@
         let inputField = this.parentElement.parentElement.querySelector('input[name="quantity"]');
         let currentQuantity = parseInt(inputField.value);
         inputField.value = currentQuantity + 1;
+        updateQuantity(inputField);
         });
         });
         });

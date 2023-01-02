@@ -43,7 +43,6 @@
                         <input type="hidden" name="product_id" value="{{ item.product.id }}">
                         <button type="submit" class="btn btn-danger btn-sm mr-2" name="remove">Remove</button>
                       </form>
-                      <button type="button" class="btn btn-primary btn-sm rounded" id="update-quantity" onclick="updateQuantity(document.getElementById('quantity-{{ item.product.id }}'))">Update</button>
                     </div>
                   </td>
               </tr>
@@ -52,7 +51,7 @@
         </table>
         <div class="row justify-content-end mb-4">
           <div class="col-12 col-md-4">
-            <p>Total: €{{ grand_total }}</p>
+            <p>Total: <span id="grand-total">€{{ grand_total }}</span></p>
             <a href="#" class="btn btn-primary btn-block">Checkout</a>
           </div>
         </div>
@@ -60,6 +59,6 @@
         <p>Your cart is empty</p>
       {% endif %}
     </div>
-    {% include "shop/includes/cart_post_and_quantity.html" %}
+    {% include "shop/includes/cart_change_and_update.html" %}
   </main>
 {% endblock %}

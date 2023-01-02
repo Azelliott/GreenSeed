@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from django.http import JsonResponse
 from decimal import Decimal
+from django.conf import settings
 from .models import Product, Category
 
 
@@ -146,4 +147,14 @@ def update_cart(request):
         product = get_object_or_404(Product, pk=product_id)
         cart_total += product.price * quantity
 
-    return JsonResponse({'cart_total': cart_total})
+    # Calculate the delivery and grand total
+    if cart_total < settings.FREE_DELIVERY_THRESHOLD:
+        delivery = cart_total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
+        free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - cart_total
+    else:
+        delivery = 0
+        free_delivery_delta = 0
+
+    grand_total = delivery + cart_total
+
+    return JsonResponse({'cart_total': cart_total, 'grand_total': round(grand_total, 2)})
