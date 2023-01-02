@@ -111,7 +111,6 @@ def add_item(request, product_id):
 
     request.session['cart'] = cart
 
-    print(request.session['cart'])
     return redirect(redirect_url)
 
 

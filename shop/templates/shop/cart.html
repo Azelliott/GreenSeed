@@ -37,12 +37,15 @@
                 <td>€{{ item.product.price }}</td>
                 <td>€{{ item.line_total }}</td>
                 <td>
-                    <form method="POST" action="{% url 'remove_item' %}">
+                    <div class="btn-group btn-group-sm">
+                      <form method="POST" action="{% url 'remove_item' %}">
                         {% csrf_token %}
                         <input type="hidden" name="product_id" value="{{ item.product.id }}">
-                        <button type="submit" class="btn btn-danger btn-sm" name="remove">Remove</button>
+                        <button type="submit" class="btn btn-danger btn-sm mr-2" name="remove">Remove</button>
                       </form>
-                </td>
+                      <button type="button" class="btn btn-primary btn-sm rounded" id="update-quantity" onclick="updateQuantity(document.getElementById('quantity-{{ item.product.id }}'))">Update</button>
+                    </div>
+                  </td>
               </tr>
             {% endfor %}
           </tbody>
@@ -57,56 +60,6 @@
         <p>Your cart is empty</p>
       {% endif %}
     </div>
-    <script>
-        function updateQuantity(inputField) {
-            var productId = inputField.id.split("-")[1]; // Extract the product id from the input field id
-            var newQuantity = inputField.value; // Get the new quantity from the input field value
-            var csrftoken = "{{ csrf_token }}"; // Get the CSRF token from the template
-
-            // Send an ajax request to the Django view that updates the cart
-            $.ajax({
-            url: 'update_cart/',
-            type: 'POST',
-            data: {
-            'csrfmiddlewaretoken':csrftoken,
-            'product_id': productId,
-            'quantity': newQuantity
-            },
-            success: function(response) {
-            // Update the cart total on the page
-            $('#cart-total').text(response.cart_total);
-            }
-            });
-            }
-
-
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Select all increment and decrement buttons
-            const decrementBtns = document.querySelectorAll('#decrement-quantity');
-            const incrementBtns = document.querySelectorAll('#increment-quantity');
-
-            // Add event listeners to all buttons
-            decrementBtns.forEach(function(btn) {
-            btn.addEventListener('click', function() {
-            // Get the input field and decrement its value
-            let inputField = this.parentElement.parentElement.querySelector('input[name="quantity"]');
-            let currentQuantity = parseInt(inputField.value);
-            if (currentQuantity > 1) {
-            inputField.value = currentQuantity - 1;
-            }
-            });
-            });
-            incrementBtns.forEach(function(btn) {
-            btn.addEventListener('click', function() {
-            // Get the input field and increment its value
-            let inputField = this.parentElement.parentElement.querySelector('input[name="quantity"]');
-            let currentQuantity = parseInt(inputField.value);
-            inputField.value = currentQuantity + 1;
-            });
-            });
-            });
-    </script>
+    {% include "shop/includes/cart_post_and_quantity.html" %}
   </main>
 {% endblock %}
