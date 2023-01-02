@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
-from .models import Product
+from .models import Product, Category
 
 
 # Online shop page
@@ -54,11 +54,25 @@ def shop_products(request, category_slug=None, search_query=None):
         category_q = Q(category__slug=category_slug)
         products = products.filter(category_q)
 
+    # Get the category object
+    category, created = Category.objects.get_or_create(slug=category_slug)
+    category_name = category.friendly_name
+
+    if category_slug == 'plants':
+        category_name = 'Plants'
+    elif category_slug == 'accessories':
+        category_name = 'Accessories'
+    elif category_slug == 'all-products':
+        category_name = 'All Products'
+    else:
+        category_name = category.friendly_name
+
     paginator = Paginator(products, 12)  # Show 12 products per page
     page = request.GET.get('page')
     products = paginator.get_page(page)
     context = {
         'products': products,
+        'category_name': category_name,
     }
     return render(request, 'shop/shop-products.html', context)
 
