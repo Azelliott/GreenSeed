@@ -27,9 +27,12 @@ def cart_contents(request):
         delivery = 0
         free_delivery_delta = 0
 
+    grand_total = delivery + total
+
     context = {
         'cart_items': cart_items,
         'total': total,
+        'grand_total': round(grand_total, 2),
         'product_count': product_count,
         'delivery': delivery,
         'free_delivery_delta': free_delivery_delta,

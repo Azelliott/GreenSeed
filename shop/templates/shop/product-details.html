@@ -3,16 +3,7 @@
 
 {% block content %}
         <main>
-            <div class="container"> 
-                <div class="row height d-flex justify-content-center align-items-center" style="margin-top: 35px; margin-bottom: 25px;"> 
-                    <div class="col-md-8"> 
-                        <div class="search input-group"> <i class="fa fa-search"></i> 
-                            <input type="text" class="form-control rounded-start" placeholder="I'm looking for..."/> 
-                            <button class="btn btn-primary rounded-left">Search</button>                             
-                        </div>                         
-                    </div>                     
-                </div>                 
-            </div>
+            {% include "shop/includes/search.html" %}
             <div class="container pb-4 pt-4">
                 <div class="align-items-center row">
                     <div class="col">
@@ -42,14 +33,37 @@
                         <form method="POST" action="{% url 'add_item' product.id %}">
                             {% csrf_token %}
                             <label for="quantity">Quantity:</label>
-                            <input type="number" name="quantity" value="1" min="1">
+                            <div class="form-group d-flex align-items-center">
+                              <button type="button" class="btn btn-sm btn-outline-secondary rounded-left" id="decrement-quantity">-</button>
+                              <input type="number" name="quantity" value="1" min="1" class="form-control form-control-sm" style="width: 100px;">
+                              <button type="button" class="btn btn-sm btn-outline-secondary rounded-right" id="increment-quantity">+</button>
+                            </div>
+                            <br>
+                            <br>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             <button type="submit" class="btn btn-sm btn-outline-secondary">Add to cart</button>
                             <a href="{{ request.META.HTTP_REFERER }}" class="btn btn-sm btn-outline-secondary">Back</a>
-                        </form>
+                          </form>
                     </div>
                     </div>
                 </div>
             </div>
+            <script>
+                const decrementBtn = document.getElementById('decrement-quantity');
+                const incrementBtn = document.getElementById('increment-quantity');
+                const quantityInput = document.querySelector('input[name="quantity"]');
+              
+                decrementBtn.addEventListener('click', function() {
+                  let currentQuantity = parseInt(quantityInput.value);
+                  if (currentQuantity > 1) {
+                    quantityInput.value = currentQuantity - 1;
+                  }
+                });
+              
+                incrementBtn.addEventListener('click', function() {
+                  let currentQuantity = parseInt(quantityInput.value);
+                  quantityInput.value = currentQuantity + 1;
+                });
+              </script>
         </main>
     {% endblock %}
