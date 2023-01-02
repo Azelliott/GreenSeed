@@ -36,13 +36,9 @@
                         <h2 class="h3 mb-3">{{ product.name }}</h2>
                         <p>{{ product.description }}</p>
                         {% if product.rating %}
-                        <p>Rating: {{ product.rating }}/5</p>
+                        <p><i class="fas fa-star"></i>{{ product.rating }}/5</p>
                         {% endif %}
-                        {% if product.availability %}
-                        <p>Availability: In Stock</p>
-                        {% else %}
-                        <p>Availability: Out of Stock</p>
-                        {% endif %}
+                        <p>Stock: {% if product.availability %}<i class="fas fa-check-circle"></i>{% else %}<i class="fas fa-times-circle"></i>{% endif %}</p>
                         <form method="POST" action="{% url 'add_item' product.id %}">
                             {% csrf_token %}
                             <label for="quantity">Quantity:</label>

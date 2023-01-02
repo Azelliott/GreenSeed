@@ -13,16 +13,7 @@ main {
     flex: 1;
   }
 
-.search {
-    position: relative;
-    box-shadow: 0 0 40px rgba(51, 51, 51, .1);
-}
 
-.search input {
-    height: 60px;
-    text-indent: 25px;
-    border: 2px solid #d6d4d4;
-}
 
 
 /* Messages */

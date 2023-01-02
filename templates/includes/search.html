@@ -3,10 +3,9 @@
         <div class="col-md-8"> 
             <form method="GET" action="{% url 'shop-products' 'all-products' %}">
                 {% csrf_token %}
-                <div class="search input-group">
-                    <i class="fa fa-search"></i> 
-                    <input type="text" name="search_query" class="form-control rounded-start" placeholder="I'm looking for..."/> 
-                    <button class="btn btn-primary rounded-left">Search</button>                             
+                <div class="search input-group">                   
+                    <input type="text" name="search_query" class="form-control form-control-sm rounded-start" placeholder="I'm looking for..."/> 
+                    <button class="btn btn-primary btn-sm rounded-right"><i class="fa fa-search"></i> </button>                             
                 </div>
             </form>                 
         </div>                     

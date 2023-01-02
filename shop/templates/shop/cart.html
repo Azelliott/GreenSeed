@@ -10,6 +10,7 @@
         <table class="table table-striped">
           <thead>
             <tr>
+            <th scope="col">Product image</th>
               <th scope="col">Product</th>
               <th scope="col">Quantity</th>
               <th scope="col">Price</th>
@@ -20,8 +21,9 @@
           <tbody>
             {% for item in cart_items %}
               <tr>
-                <td>{{ item.product }}</td>
-                <td><input type="number" min="1" value="{{ item.quantity }}" id="quantity-{{ item.product.id }}" class="form-control form-control-sm" onchange="updateQuantity(this, {{ item.product.id }})"></td>
+                <td><img src="{{ item.product.image.url }}" alt="Product Image" class="img-fluid" style="max-width: 100px;"></td>
+                <td >{{ item.product }}</td>
+                <td><input type="number" min="1" value="{{ item.quantity }}" id="quantity-{{ item.product.id }}" class="form-control form-control-sm w-50" onchange="updateQuantity(this, {{ item.product.id }})"></td>
                 <td>€{{ item.product.price }}</td>
                 <td>€{{ item.line_total }}</td>
                 <td>
