@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
+from django.http import JsonResponse
+from decimal import Decimal
 from .models import Product, Category
 
 
@@ -91,7 +93,7 @@ def product_details(request, product_id):
 def view_cart(request):
     '''A view to return the view cart page'''
     cart = request.session.get('cart', {})
-
+    print(cart)
     return render(request, 'shop/cart.html', {'cart': cart})
 
 
@@ -123,3 +125,26 @@ def remove_item(request):
         request.session['cart'] = cart
     print(product_id)
     return redirect('view_cart')
+
+
+# Update cart
+def update_cart(request):
+    '''Update the quantity of a product in the cart'''
+    product_id = request.POST.get('product_id')
+    quantity = int(request.POST.get('quantity'))
+    cart = request.session.get('cart', {})
+
+    if product_id in list(cart.keys()):
+        cart[product_id] = quantity
+    else:
+        cart[product_id] = quantity
+
+    request.session['cart'] = cart
+
+    # Calculate the cart total
+    cart_total = Decimal('0.00')
+    for product_id, quantity in cart.items():
+        product = get_object_or_404(Product, pk=product_id)
+        cart_total += product.price * quantity
+
+    return JsonResponse({'cart_total': cart_total})

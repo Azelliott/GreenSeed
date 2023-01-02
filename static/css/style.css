@@ -11,9 +11,15 @@ body {
 
 main {
     flex: 1;
-  }
+}
 
+header {
+    min-width: 540px;
+}
 
+footer {
+    min-width: 540px;
+}
 
 
 /* Messages */
@@ -159,3 +165,35 @@ a{
     width: 250px;
 }
 
+@media (max-width: 540px) {
+table.table {
+    width: 100%;
+}
+th {
+    display: none;
+}
+td {
+    display: block;
+}
+td:first-child {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+td:not(:first-child) {
+    clear: both;
+    margin: 0;
+    border: 0;
+}
+td:not(:first-child):before {
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+td img {
+    display: block;
+    width: 100%;
+    }
+}

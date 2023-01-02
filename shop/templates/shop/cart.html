@@ -7,7 +7,7 @@
     <div class="container">
       <h1 class="text-center mb-4">Cart</h1>
       {% if cart_items %}
-        <table class="table table-rounded">
+        <table class="table table-rounded table-responsive">
           <thead>
             <tr>
             <th scope="col">Product image</th>
@@ -22,8 +22,18 @@
             {% for item in cart_items %}
               <tr>
                 <td><img src="{{ item.product.image.url }}" alt="Product Image" class="img-fluid" style="max-width: 100px;"></td>
-                <td >{{ item.product }}</td>
-                <td><input type="number" min="1" value="{{ item.quantity }}" id="quantity-{{ item.product.id }}" class="form-control form-control-sm w-50" onchange="updateQuantity(this, {{ item.product.id }})"></td>
+                <td>{{ item.product }}</td>
+                <td>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-left" id="decrement-quantity">-</button>
+                      </div>
+                      <input type="number" name="quantity" min="1" value="{{ item.quantity }}" id="quantity-{{ item.product.id }}" class="form-control form-control-sm" style="width: 50px;" onchange="updateQuantity(this)">
+                      <div class="input-group-append">
+                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-right" id="increment-quantity">+</button>
+                      </div>
+                    </div>
+                  </td>
                 <td>€{{ item.product.price }}</td>
                 <td>€{{ item.line_total }}</td>
                 <td>
@@ -47,5 +57,56 @@
         <p>Your cart is empty</p>
       {% endif %}
     </div>
+    <script>
+        function updateQuantity(inputField) {
+            var productId = inputField.id.split("-")[1]; // Extract the product id from the input field id
+            var newQuantity = inputField.value; // Get the new quantity from the input field value
+            var csrftoken = "{{ csrf_token }}"; // Get the CSRF token from the template
+
+            // Send an ajax request to the Django view that updates the cart
+            $.ajax({
+            url: 'update_cart/',
+            type: 'POST',
+            data: {
+            'csrfmiddlewaretoken':csrftoken,
+            'product_id': productId,
+            'quantity': newQuantity
+            },
+            success: function(response) {
+            // Update the cart total on the page
+            $('#cart-total').text(response.cart_total);
+            }
+            });
+            }
+
+
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select all increment and decrement buttons
+            const decrementBtns = document.querySelectorAll('#decrement-quantity');
+            const incrementBtns = document.querySelectorAll('#increment-quantity');
+
+            // Add event listeners to all buttons
+            decrementBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+            // Get the input field and decrement its value
+            let inputField = this.parentElement.parentElement.querySelector('input[name="quantity"]');
+            let currentQuantity = parseInt(inputField.value);
+            if (currentQuantity > 1) {
+            inputField.value = currentQuantity - 1;
+            }
+            });
+            });
+            incrementBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+            // Get the input field and increment its value
+            let inputField = this.parentElement.parentElement.querySelector('input[name="quantity"]');
+            let currentQuantity = parseInt(inputField.value);
+            inputField.value = currentQuantity + 1;
+            });
+            });
+            });
+    </script>
   </main>
 {% endblock %}
