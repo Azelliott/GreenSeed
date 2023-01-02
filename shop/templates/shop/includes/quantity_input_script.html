@@ -1,0 +1,17 @@
+<script>
+    const decrementBtn = document.getElementById('decrement-quantity');
+    const incrementBtn = document.getElementById('increment-quantity');
+    const quantityInput = document.querySelector('input[name="quantity"]');
+  
+    decrementBtn.addEventListener('click', function() {
+      let currentQuantity = parseInt(quantityInput.value);
+      if (currentQuantity > 1) {
+        quantityInput.value = currentQuantity - 1;
+      }
+    });
+  
+    incrementBtn.addEventListener('click', function() {
+      let currentQuantity = parseInt(quantityInput.value);
+      quantityInput.value = currentQuantity + 1;
+    });
+  </script>
