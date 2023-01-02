@@ -143,11 +143,13 @@ def update_cart(request):
     # Calculate the cart total
     cart_total = Decimal('0.00')
     line_totals = []
+    total_items = 0
     for product_id, quantity in cart.items():
         product = get_object_or_404(Product, pk=product_id)
         cart_total += product.price * quantity
         line_total = quantity * product.price
         line_totals.append(line_total)
+        total_items += quantity
 
     # Calculate the delivery and grand total
     if cart_total < settings.FREE_DELIVERY_THRESHOLD:
@@ -164,4 +166,5 @@ def update_cart(request):
     return JsonResponse({'cart_total': cart_total,
                          'grand_total': round(grand_total, 2),
                          'line_totals': line_totals,
+                         'total_items': total_items,
                          })
