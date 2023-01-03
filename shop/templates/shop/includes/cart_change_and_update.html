@@ -17,9 +17,11 @@
         // Update the cart total and grand total on the page
         $('#cart-total').text(response.cart_total);
         $('#grand-total').html("&euro;" + response.grand_total);
-        for (var i=0; i<response.line_totals.length; i++) {
-        $('#line-total-' + (i+1)).html("&euro;" + response.line_totals[i]);
-        };
+        
+        for (var product_id in response.line_totals) {
+            $('#line-total-' + product_id).html("&euro;" + response.line_totals[product_id]);
+        }
+        
         $('#total-items').text("(" + response.total_items + ")");
         },
         

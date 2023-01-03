@@ -145,13 +145,13 @@ def update_cart(request):
 
     # Calculate the cart total
     cart_total = Decimal('0.00')
-    line_totals = []
+    line_totals = {}
     total_items = 0
     for product_id, quantity in cart.items():
         product = get_object_or_404(Product, pk=product_id)
         cart_total += product.price * quantity
         line_total = quantity * product.price
-        line_totals.append(line_total)
+        line_totals[product_id] = line_total
         total_items += quantity
 
     # Calculate the delivery and grand total
@@ -164,7 +164,7 @@ def update_cart(request):
 
     grand_total = delivery + cart_total
     # Calculate the line total for the product
-    line_total = product.price * quantity
+    #line_total = product.price * quantity
 
     return JsonResponse({'cart_total': cart_total,
                          'grand_total': round(grand_total, 2),
