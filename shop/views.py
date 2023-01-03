@@ -5,6 +5,7 @@ from django.db.models import Q
 from django.http import JsonResponse
 from decimal import Decimal
 from django.conf import settings
+from django.contrib import messages
 from .models import Product, Category
 
 
@@ -110,6 +111,7 @@ def add_item(request, product_id):
         cart[product_id] = quantity
 
     request.session['cart'] = cart
+    messages.success(request, f'Added {quantity} item(s) to your cart')
 
     return redirect(redirect_url)
 
@@ -122,7 +124,8 @@ def remove_item(request):
     if product_id in cart:
         del cart[product_id]
         request.session['cart'] = cart
-    print(product_id)
+        messages.error(request, f'Removed item from your cart')
+
     return redirect('view_cart')
 
 

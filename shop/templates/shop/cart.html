@@ -5,6 +5,7 @@
 {% block content %}
 <main>
     <div class="container">
+        {% include "includes/messages.html" %}
       <h1 class="text-center mb-4">Cart</h1>
       {% if cart_items %}
         <table class="table table-rounded table-responsive">
