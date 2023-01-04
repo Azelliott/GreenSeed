@@ -37,6 +37,7 @@ MarkupSafe==2.1.1
 mccabe==0.7.0
 oauthlib==3.2.0
 phonenumberslite==8.12.54
+Pillow==9.3.0
 platformdirs==2.5.2
 psycopg2-binary==2.9.3
 pycodestyle==2.9.1

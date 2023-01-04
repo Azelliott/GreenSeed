@@ -53,7 +53,7 @@
         <div class="row justify-content-end mb-4">
           <div class="col-12 col-md-4">
             <p>Total: <span id="grand-total">€{{ grand_total }}</span></p>
-            <a href="#" class="btn btn-primary btn-block">Checkout</a>
+            <a href="{% url 'checkout' %}" class="btn btn-primary btn-block">Checkout</a>
           </div>
         </div>
       {% else %}
