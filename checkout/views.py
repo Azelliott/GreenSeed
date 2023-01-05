@@ -7,7 +7,7 @@ from shop.models import Product
 from .forms import OrderForm
 from .models import Order, OrderItem
 from shop.contexts import cart_contents
-from .webhooks import webhook
+
 
 import stripe
 import json
