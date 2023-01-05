@@ -174,13 +174,24 @@
             </div>
         </div>
     </div>
-                <a href="{% url 'shop' %}" class="btn btn-black rounded-0 my-2">
+    <div class="col-12 col-lg-7 text-right">
+        {% if from_profile %}
+                <a href="{% url 'my_account' %}" class="btn btn-black rounded-0 my-2 ">
 					<span class="icon mr-2">
-						<i class="fas fa-gifts"></i>
+						<i class="fas fa-angle-left"></i>
 					</span>
-					<span class="text-uppercase">Back to shop</span>
+					<span class="text-uppercase">Back to My Account</span>
 				</a>
+            {% else %}
+            <a href="{% url 'shop' %}" class="btn btn-black rounded-0 my-2">
+                <span class="icon mr-2">
+                    <i class="fas fa-gifts"></i>
+                </span>
+                <span class="text-uppercase">Back to shop</span>
+            </a>
+        {% endif %}
             </div>
+        </div>
     </div>
 </main>
 {% endblock %}

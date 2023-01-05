@@ -27,7 +27,39 @@
             </div>
             <div class="col-12 col-lg-6">
                 <p class="text-muted">My orders</p>
-                {{ orders }}
+                <div class="order-history table-responsive"></div>
+                <table class="table table-sm table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">Order number</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Items</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                            <tr>
+                                <td>
+                                    <a href="{% url 'order_history' order.order_number %}"
+                                    title="{{ order.order_number }}">
+                                        {{ order.order_number|truncatechars:6 }}
+                                    </a>
+                                </td>
+                                <td>{{ order.date_placed }}</td>
+                                <td>
+                                    <ul class="list-unstyled">
+                                        {% for item in order.items.all %}
+                                            <li>{{ item.product.name }} x {{ item.quantity }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </td>
+                                <td>{{ order.grand_total }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    </thead>
+                </table>
             </div>
         </div>
     </div>

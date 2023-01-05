@@ -22,3 +22,8 @@ footer {
 #profile-update-form input {
     color: black;
 }
+
+.order-history {
+    max-height: 500px;
+    overflow-y: auto;
+}
