@@ -24,6 +24,9 @@ class Order(models.Model):
                                       null=False, default=0, editable=False)
     delivery_cost = models.DecimalField(max_digits=6, decimal_places=2,
                                         null=False, default=0)
+    original_cart = models.TextField(null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False,
+                                  default='')
 
     def _generate_order_number(self):
         '''Generate a random, unique order number using UUID'''

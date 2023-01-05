@@ -63,7 +63,7 @@ form.addEventListener('submit', function(ev) {
         'save_info': saveInfo,
     };
     var url = '/checkout/cache_checkout_data/';
-    console.log(postData)
+
     $.post(url, postData).done(function () {
 
 
