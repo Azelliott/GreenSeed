@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4 text-center">Thank you!</h2>
+                <hr>
+                <p>Plese see your order information below</p>
+                <p>Confirmation email have been sent to <strong>{{ order.email }}</strong></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-7">
+                <a href="{% url 'shop' %}" class="btn btn-black rounded-0 my-2">
+					<span class="icon mr-2">
+						<i class="fas fa-gifts"></i>
+					</span>
+					<span class="text-uppercase">Back to shop</span>
+				</a>
+            </div>
+    </div>
+</main>
+{% endblock %}
