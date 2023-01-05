@@ -18,3 +18,7 @@ header {
 footer {
     min-width: 540px;
 }
+
+#profile-update-form input {
+    color: black;
+}
