@@ -1,11 +1,13 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from .forms import UserProfileForm
+from django.contrib.auth.decorators import login_required
 
 from .models import UserProfile
 from checkout.models import Order
 
 
+@login_required
 def my_account(request):
     """ A view to return the profile page """
 
@@ -33,6 +35,7 @@ def my_account(request):
     return render(request, template, context)
 
 
+@login_required
 def order_history(request, order_number):
     """ A view to return the order history page """
 
