@@ -33,6 +33,14 @@
                                         {% endif %}
                                     </a>
                                     <div class="card-body">
+                                        <div class="text-center">
+                                            {% if request.user.is_superuser %}
+                                            <small class="ml-3">
+                                              <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                              <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                            </small>
+                                            {% endif %}
+                                          </div>
                                         <a href="{% url 'product-details' product.id %}" class="d-inline-block mb-2 small text-secondary">{{ product.name }}</a>
                                         {% if product.description %}
                                         <p class="card-text">{{ product.description|truncatewords:20 }} <a href="{% url 'product-details' product.id %}" class="text-secondary">See more</a></p>
