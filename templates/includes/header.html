@@ -87,7 +87,18 @@
                             <a class="dropdown-item" href="{% url 'shop-products' 'all-products' %}">All products</a>
                             <a class="dropdown-item" href="{% url 'shop-products' 'plants' %}">Plants</a>
                             <a class="dropdown-item" href="{% url 'shop-products' 'accessories' %}">Accessories</a>
+                            {% if user.is_authenticated and user.is_admin %}
+                                <div class="dropdown-divider"></div>
+                                <h6 class="dropdown-header">Management</h6>
+                                <a class="dropdown-item" href="{% url 'add_product' %}">Add Product</a>
+                                <a class="dropdown-item" href="{% url 'edit_product' %}">Edit Product</a>
+                            {% endif %}
                         </div>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link p-2 pb-3 ps-2 pe-2 pt-3" href="{% url 'view_cart' %}" title="View Cart"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.25em" height="1.25em">
+                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path d="M7 8V6a5 5 0 1 1 10 0v2h3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3zm0 2H5v10h14V10h-2v2h-2v-2H9v2H7v-2zm2-2h6V6a3 3 0 0 0-6 0v2z"></path>
+                    </svg> <span id="total-items" class="small">({{ product_count }})</span></a> 
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item"> <a class="nav-link pb-lg-3 pe-lg-4 ps-lg-4 pt-lg-3" href="{% url 'my_account' %}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.25em" height="1.25em">
@@ -95,17 +106,15 @@
                                 <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-4.987-3.744A7.966 7.966 0 0 0 12 20c1.97 0 3.773-.712 5.167-1.892A6.979 6.979 0 0 0 12.16 16a6.981 6.981 0 0 0-5.147 2.256zM5.616 16.82A8.975 8.975 0 0 1 12.16 14a8.972 8.972 0 0 1 6.362 2.634 8 8 0 1 0-12.906.187zM12 13a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path>
                             </svg> My Account</a> 
                     </li>
-                    <li class="nav-item"> <a class="nav-link p-2 pb-3 ps-2 pe-2 pt-3" href="{% url 'view_cart' %}" title="View Cart"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.25em" height="1.25em">
-                        <path fill="none" d="M0 0h24v24H0z"></path>
-                        <path d="M7 8V6a5 5 0 1 1 10 0v2h3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3zm0 2H5v10h14V10h-2v2h-2v-2H9v2H7v-2zm2-2h6V6a3 3 0 0 0-6 0v2z"></path>
-                    </svg> <span id="total-items" class="small">({{ product_count }})</span></a> 
-                    </li>
                     <li class="nav-item"> <a class="{% if url_name == 'logout' %} active {% endif %} nav-link pb-lg-3 pe-lg-4 ps-lg-4 pt-lg-3" href="{% url 'logout' %}">Log Out</a> 
                     </li>
                     {% else %}
                     <li class="nav-item"> <a class="{% if url_name == 'login' %} active {% endif %} nav-link pb-lg-3 pe-lg-4 ps-lg-4 pt-lg-3" href="{% url 'login' %}">Login</a> 
                     </li>
                     {% endif %}
+
+
+
 
                     {% endwith %}                         
                 </ul>                         

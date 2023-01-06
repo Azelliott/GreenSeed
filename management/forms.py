@@ -22,5 +22,5 @@ class ProductForm(forms.ModelForm):
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
             field.widget.attrs['placeholder'] = field.label
-            if field_name != 'category' and field_name != 'availability':
+            if field_name != 'category' and field_name != 'availability' and field_name != 'rating':
                 field.label = False
