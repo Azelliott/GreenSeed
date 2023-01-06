@@ -49,13 +49,27 @@ class HomeViewTests(TestCase):
         # check that the response is 200 (OK)
         self.assertEqual(response.status_code, 200)
 
-    def test_contact_form_submission(self):
-        # send a POST request to the view with valid form data
+        # fill out the form and submit it
         response = self.client.post(reverse('contact'), {
             'name': 'test',
             'email': 'test@test.com',
             'message': 'test',
         })
 
+        # check that the response is 302 (redirect)
+        self.assertEqual(response.status_code, 302)
+
         # check that a new contact form was created
         self.assertEqual(ContactForm.objects.count(), 1)
+
+        # check that the contact form was created with the correct data
+        contact_form = ContactForm.objects.first()
+        self.assertEqual(contact_form.name, 'test')
+        self.assertEqual(contact_form.email, 'test@test.com')
+        self.assertEqual(contact_form.message, 'test')
+        
+        # check that the contact form was created with the correct date
+        self.assertEqual(contact_form.date.year, timezone.now().year)
+        self.assertEqual(contact_form.date.month, timezone.now().month)
+        self.assertEqual(contact_form.date.day, timezone.now().day)
+        
