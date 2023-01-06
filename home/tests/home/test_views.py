@@ -67,9 +67,9 @@ class HomeViewTests(TestCase):
         self.assertEqual(contact_form.name, 'test')
         self.assertEqual(contact_form.email, 'test@test.com')
         self.assertEqual(contact_form.message, 'test')
-        
+
         # check that the contact form was created with the correct date
         self.assertEqual(contact_form.date.year, timezone.now().year)
         self.assertEqual(contact_form.date.month, timezone.now().month)
         self.assertEqual(contact_form.date.day, timezone.now().day)
-        
+
