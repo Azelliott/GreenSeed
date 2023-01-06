@@ -1,0 +1,28 @@
+Dear Customer,
+
+Thank you for your recent order with our online store! Your order number is {{ order.order_number}}.
+
+Below is a summary of your order:
+-----------------------------------------------------------------------------------
+{% for item in order.items.all %}
+Product: {{ item.product.name }}
+Quantity: {{ item.quantity }}
+{% endfor %}
+Order Date: {{ order.date_placed }}
+Grand Total: {{ order.grand_total }}
+We will begin processing your order as soon as possible and it will be shipped to:
+
+{{ order.full_name }}
+{{ order.street_address1 }}
+{% if order.street_address2 %}
+{{ order.street_address2 }}
+{% endif %}
+{{ order.city }}, {{ order.county }} {{ order.postcode }}
+{{ order.country }}
+
+If you have any questions or need to make any changes to your order, please don't hesitate to contact us at {{ contact_email}}.
+
+Thank you for your business!
+
+Best regards,
+The GreenSeed Team
