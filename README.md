@@ -1,108 +1,211 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# GreenSeed
+![Screenshot of  website](static/image/screenshots/home-index.png)
+Welcome to GreenSeed, the premier online destination for all of your plant-related needs. At GreenSeed, we are passionate about bringing nature into people's lives and helping them create their own little corner of the world.
 
-Welcome USER_NAME,
+Founded over a decade ago, GreenSeed has grown from a small brick and mortar shop into a major player in the world of e-commerce. As a B2C company, our focus is on providing an exceptional shopping experience for our customers.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+At GreenSeed, we offer a wide range of products, including everything from seeds to fully grown plants, as well as a variety of plant accessories. With hundreds of plants from around the globe, we have something for everyone, no matter what your style or space.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+But GreenSeed is more than just an online shop. We are also committed to sustainability and social responsibility. We use the latest technology in our production process to minimize our environmental impact, and we prioritize sustainable practices in all aspects of our business.
 
-## Gitpod Reminders
+In addition, we are proud to support the GreenSeed Foundation, which sponsors research in renewable technologies and actively drives reforestation efforts in endangered areas around the globe.
+
+So why wait? Start exploring the world of plants today with GreenSeed. We can't wait to help you bring a little bit of nature into your life.
+
+
+## Project Description
+GreenSeed is a full-featured e-commerce platform for buying and selling all kinds of plants and accessories. Built with Django and Bootstrap, it offers a sleek and intuitive interface for browsing and purchasing products.
+
+Features
+
+* Search: Easily find what you're looking for with our powerful search feature.
+
+* Product grouping and filtering: Find the perfect plant or accessory using our advanced filtering options.
+
+* Checkout: Check out securely using Stripe payments.
+
+* My account page: Manage your orders and account information from a single location.
+
+* Cart: Keep track of the items you want to purchase and adjust quantities as needed.
+
+* Custom admin interface: 
+Easily manage your store's products and orders with our custom-built admin interface.
+
+* Role-based authentication: Protect your store with user roles and permissions.
+
+* And more..
+
+
+### NOTE: This application is still under development
+Things to implement:
+
+* Blog, tutorials
+
+* Much better CSS
+
+* Complete fixtures (Current one doesn't have images, for dev and testing default image is used)
+
+* Captcha or some other bot protection
+
+* Social login
+
+
+### View the live preview [here](https://greenseed-azelliott.herokuapp.com/)
+(NOTE: Hold Ctrl and click the link to open in new tab)
+
+## Table of content: 
+ - [Project Description](#project-description)
+ - [Look and Color Scheme](#look-and-color-scheme)
+ - [Technologies Used](#technologies-used)
+ - [Getting Started](#getting-started)
+ - [Features](#features)
+
+
+
+## Look and Color Scheme
+GreenSeed's color scheme is designed to evoke the natural world and promote a sense of serenity and calm. The main colors used on the site are shades of green and terracotta, with accents of woody and earthy tones.
+
+The top of the site features a vibrant shade of green, which gradually becomes darker and more woody as you scroll down the page. This color transition is meant to mimic the natural progression from the top of a tree down to its roots.
+
+In addition to the main colors, GreenSeed also uses wavy, organic lines to add a sense of movement and liveliness to the site. These lines are meant to evoke the growth and motion of plants, and help to create a cohesive, natural aesthetic.
+
+Overall, the color scheme of GreenSeed is meant to convey the company's commitment to nature and sustainability, while also providing a visually appealing and calming shopping experience for customers.
+
+## Technologies Used
+
+### Core Technologies
+This project is built with the following technologies:
+
+* [Django](https://www.djangoproject.com/) 4.1.3 - A web framework for Python
+* [Bootstrap](https://getbootstrap.com/) 5.1.3 - A CSS framework for styling and layout
+* [PostgreSQL](https://www.postgresql.org/) - Database Engine
+* [Stripe](https://stripe.com/) - Payment System
+
+## Getting Started
+
+These instructions will get you a copy of GreenSeed up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+* Python 3.6 or higher
+* Django 3.0 or higher
+* PostgreSQL
+
+### Installation
+
+
+
+Clone the repository
+```
+git clone https://github.com/[YOUR_USERNAME]/greenseed.git
+```
+
+Navigate to the project directory:
+```
+cd greenseed
+```
+
+Install the dependencies:
+```
+pip install -r requirements.txt
+```
+
+Create a PostgreSQL database and user for the project.
+
+Create a .env file in the root directory and set the following environment variables:
+
+```
+DATABASE_URL=postgres://[USERNAME]:[PASSWORD]@localhost:5432/[DATABASE_NAME]
+STRIPE_PUBLISHABLE_KEY=[YOUR_STRIPE_PUBLISHABLE_KEY]
+STRIPE_SECRET_KEY=[YOUR_STRIPE_SECRET_KEY]
+```
+
+Run the migrations:
+```
+./manage.py migrate
+```
+
+Start the development server:
+```
+./manage.py runserver
+```
+
+Open the site at http://localhost:8000.
+
+#### Gitpod
 
 To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
 ```
-pkill uptime.sh
-rm .vscode/uptime.sh
+python3 -m http.server
 ```
 
-**Anything more?**
+A blue button should appear to click: Make Public,
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+Another blue button should appear to click: Open Browser.
 
----
+To run a backend Python file, type python3 app.py, if your Python file is named app.py of course.
 
-Happy coding!
+A blue button should appear to click: Make Public,
+
+Another blue button should appear to click: Open Browser.
+
+In Gitpod you have superuser security privileges by default. Therefore you do not need to use the sudo command in the terminal.
+
+
+## Features
+
+### Overview
+
+
+### Home
+
+
+![Screenshot of GreenSeed website](static/image/screenshots/home-index.png)
+
+### Our Plants
+
+
+![Screenshot of GreenSeed website](static/image/screenshots/home-our_plants.png)
+
+### About Us
+
+
+![Screenshot of GreenSeed website](static/image/screenshots/home-about_us.png)
+
+
+### Contact
+
+
+![Screenshot of GreenSeed website](static/image/screenshots/home-contact.png)
+
+### Shop
+
+
+![Screenshot of GreenSeed website](static/image/screenshots/shop-main.png)
+![Screenshot of GreenSeed website](static/image/screenshots/shop-main_2.png)
+
+
+
+## Testing and Validation
+
+### OS and Browser tests
+This project has been tested on the following operating systems and browsers:
+
+* Windows 10 
+   - Chrome ver.108.0.5359.98
+   - Firefox ver.107.0.1
+* Fedora Silverblue Linux 
+   - Chrome ver.108.0.5359.98
+   - Firefox ver.107.0.1
+* iPad OS on iPad Air 
+   - Safari ver.16.1
+* Android
+   - Vivaldi ver.5.5.2805.50
+
+### Unit Testing
+Each app has it's own app_name/test repo folder. 
+
+
+
+
+Site images found on [Unsplash](https://unsplash.com/)

@@ -163,6 +163,8 @@ a{
 
 .card {
     width: 250px;
+    display: flex;
+
 }
 
 @media (max-width: 540px) {
