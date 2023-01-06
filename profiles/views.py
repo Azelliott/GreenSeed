@@ -18,6 +18,8 @@ def my_account(request):
             messages.success(request, 'Your profile has been updated')
         else:
             messages.error(request, 'Update failed. Please check your form.')
+    else:
+        messages.error(request, 'Update failed. Please check your form.')
 
     form = UserProfileForm(instance=profile)
     orders = profile.orders.all()

@@ -3,6 +3,7 @@ from shop.models import Product, Category
 
 
 class ProductForm(forms.ModelForm):
+    rating = forms.IntegerField(required=True, initial=3)
 
     class Meta:
         model = Product
@@ -21,5 +22,5 @@ class ProductForm(forms.ModelForm):
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
             field.widget.attrs['placeholder'] = field.label
-            if field_name != 'category':
+            if field_name != 'category' and field_name != 'availability':
                 field.label = False
