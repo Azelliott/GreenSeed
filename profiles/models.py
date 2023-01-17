@@ -5,6 +5,8 @@ from django.dispatch import receiver
 
 from django_countries.fields import CountryField
 
+from shop.models import Product
+
 
 class UserProfile(models.Model):
     '''User profile model'''

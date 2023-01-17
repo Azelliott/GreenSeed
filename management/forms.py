@@ -3,7 +3,7 @@ from shop.models import Product, Category
 
 
 class ProductForm(forms.ModelForm):
-    rating = forms.IntegerField(required=True, initial=3)
+    rating = forms.DecimalField(required=True, initial=3.0, max_digits=2, decimal_places=1)
 
     class Meta:
         model = Product
