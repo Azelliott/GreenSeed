@@ -51,6 +51,44 @@
                             </small>
                             {% endif %}
                           </form>
+                          <br>
+                          {% if order_item %}
+                          {% if user_review %}
+                            <p>You reviewed this product on: {{ user_review.created_at }}</p>
+                          {% else %}
+                            <a href="{% url 'review' product_id=product.id %}">
+                              <button class="btn btn-primary">Leave a Review</button>
+                            </a>
+                          {% endif %}
+                        {% endif %}
+                            <div>
+                            <hr>
+                            <div class="reviews-section">
+                                <h3 class="text-center font-weight-bold my-3">Reviews</h3>
+                                {% if product_reviews %}
+                                  {% for review in product_reviews %}
+                                    <div class="card my-3 w-100">
+                                      <div class="card-body">
+                                        <div class="d-flex justify-content-between mb-3">
+                                          <h5 class="card-title mb-0">{{ review.user_profile.user.username }}</h5>
+                                          <h6 class="card-subtitle mb-0"><i class="fas fa-star"></i> {{ review.rating }}</h6>
+                                        </div>
+                                        <p class="text-muted small mb-2">Reviewed on {{ review.created_at }}</p>
+                                        <p class="card-text">{{ review.text }}</p>
+                                      </div>
+                                    </div>
+                                  {% endfor %}
+                                {% else %}
+                                  <p class="text-center">No reviews found.</p>
+                                {% endif %}
+                              </div>
+                            <hr>
+                            {% for review in all_reviews %}
+                                <div>
+                                    {{ review.user_profile.user.username }}: {{ review.text }}
+                                </div>
+                            {% endfor %}
+                            </div>
                     </div>
                     </div>
                 </div>

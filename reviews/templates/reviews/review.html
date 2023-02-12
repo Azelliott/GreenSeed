@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+{% include "includes/messages.html" %}
+<div class="container pb-4 pt-4">
+    <div class="align-items-center row">
+        <div class="col">
+            <hr class="border-secondary mb-0 mt-0"/> 
+        </div>
+        <div class="col-auto">
+            <h2 class="fw-bold h4 mb-0 text-uppercase">LEAVE A REVIEW</h2> 
+        </div>
+        <div class="col">
+            <hr class="border-secondary mb-0 mt-0"/> 
+        </div>
+    </div>
+</div>
+<main class="d-flex align-items-center justify-content-center">
+  <form method="post" action="" class="p-5 border border-secondary rounded">
+    {% csrf_token %}
+    <div class="form-group">
+      <h5>{{ form.rating.label_tag }}</h5>
+      {{ form.rating }}
+    </div>
+    <div class="form-group">
+      <h5>{{ form.text.label_tag }}</h5>
+      {{ form.text }}
+    </div>
+    <button type="submit" class="btn btn-primary">Save Review</button>
+  </form>
+</main>
+    {% endblock %}
+
+    <main>
+      <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Review</button>
+      </form>
+    </main>

@@ -45,6 +45,17 @@ class Product(models.Model):
     rating = models.DecimalField(max_digits=2, decimal_places=1, null=True,
                                  blank=True)
 
+    def update_median_rating(self):
+        ratings = [r.rating for r in self.review_set.all()]
+        ratings.sort()
+        if len(ratings) % 2 == 0:
+            mid = len(ratings) // 2
+            median_rating = (ratings[mid - 1] + ratings[mid]) / 2
+        else:
+            median_rating = ratings[len(ratings) // 2]
+        self.rating = median_rating
+        self.save()
+
     def get_category_name(self):
         '''Returns the name of the category'''
         return self.category.name

@@ -7,6 +7,9 @@ from decimal import Decimal
 from django.conf import settings
 from django.contrib import messages
 from .models import Product, Category
+from profiles.models import UserProfile
+from checkout.models import Order, OrderItem
+from reviews.models import Review
 
 
 # Online shop page
@@ -85,8 +88,28 @@ def shop_products(request, category_slug=None, search_query=None):
 def product_details(request, product_id):
     '''A view to return the product detail page'''
     product = get_object_or_404(Product, pk=product_id)
+    order_item = None
+    user_review = None
+    if request.user.is_authenticated:
+        user_profile = UserProfile.objects.get(user=request.user)
+        order_history = Order.objects.filter(user_profile=user_profile)
+        for order in order_history:
+            try:
+                order_item = order.items.get(product=product)
+                user_review = order_item.reviews.get(user_profile=user_profile)
+                break
+            except OrderItem.DoesNotExist:
+                pass
+            except Review.DoesNotExist:
+                pass
+    
+    product_reviews = Review.objects.filter(order_item__product=product).select_related('user_profile')
+
     context = {
         'product': product,
+        'order_item': order_item,
+        'user_review': user_review,
+        'product_reviews': product_reviews,
     }
     return render(request, 'shop/product-details.html', context)
 

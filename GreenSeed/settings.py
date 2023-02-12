@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'django_summernote',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -64,6 +65,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'management',
+    'reviews',
 ]
 
 MIDDLEWARE = [
