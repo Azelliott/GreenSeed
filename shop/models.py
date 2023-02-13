@@ -40,7 +40,7 @@ class Product(models.Model):
                               validators=[FileExtensionValidator(['png', 'jpg',
                                                                  'jpeg']),
                                           MinLengthValidator(1024)],
-                              default='static/default/not-found.jpg')
+                              default='default/not-found.jpg')
     availability = models.BooleanField(default=True)
     rating = models.DecimalField(max_digits=2, decimal_places=1, null=True,
                                  blank=True)
