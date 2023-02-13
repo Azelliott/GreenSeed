@@ -29,7 +29,7 @@
                                         {% if product.image %}
                                             <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid w-100" width="500" height="700"/>
                                         {% else %}
-                                            <img src="{% url 'default/not-found.jpg' %}" alt="{{ product.name }}" class="img-fluid w-100" width="500" height="700"/>
+                                            <img src="{% static 'default/not-found.jpg' %}" alt="{{ product.name }}" class="img-fluid w-100" width="500" height="700"/>
                                         {% endif %}
                                     </a>
                                     <div class="card-body">

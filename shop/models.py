@@ -36,11 +36,7 @@ class Product(models.Model):
     name = models.CharField(max_length=254)
     description = models.TextField(max_length=500, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    image = models.ImageField(upload_to='products', null=True, blank=True,
-                              validators=[FileExtensionValidator(['png', 'jpg',
-                                                                 'jpeg']),
-                                          MinLengthValidator(1024)],
-                              default='default/not-found.jpg')
+    image = models.ImageField(null=True, blank=True)
     availability = models.BooleanField(default=True)
     rating = models.DecimalField(max_digits=2, decimal_places=1, null=True,
                                  blank=True)
