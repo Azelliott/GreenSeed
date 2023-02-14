@@ -1,6 +1,6 @@
 ## Greenseed DB Diagram
 
-This DB diagram was created with PyGraphViz
+This DB diagram was created with PyGraphviz
 
 To install run:
 
@@ -21,7 +21,7 @@ or you can run:
 $ pip3 install pygraphviz
 ```
 
-pygraphviz is a Python interface to the GrapthViz graph layout and visualization package.
+pygraphviz is a Python interface to the Graphviz graph layout and visualization package.
 
 After installing the OS package install django-extensions with:
 

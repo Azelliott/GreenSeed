@@ -148,6 +148,7 @@ Another blue button should appear to click: Open Browser.
 
 In Gitpod you have superuser security privileges by default. Therefore you do not need to use the sudo command in the terminal.
 
+[Back to top](#greenseed)  
 
 ## Features
 
@@ -332,6 +333,10 @@ Logout
 
 </details>
 
+<br>
+
+[Back to top](#greenseed)  
+
 ## Testing and Validation
 
 ### OS and Browser tests
@@ -348,8 +353,15 @@ This project has been tested on the following operating systems and browsers:
 * Android
    - Vivaldi ver.5.5.2805.50
 
+
+
 ### Unit Testing
-Each app has it's own app_name/test repo folder. 
+Each app has it's own testing folder.
+To run the tests type into terminal:
+
+```
+python3 manage.py test app_name.tests
+```
 
 
 
