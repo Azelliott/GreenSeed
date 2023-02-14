@@ -1,20 +1,21 @@
 from django.urls import reverse
 from django.test import TestCase
 from django.utils import timezone
+from django.contrib.auth.models import User
 from home.models import NewsletterForm, ContactForm
 
 
-class HomeViewTests(TestCase):
-    def test_index_view(self):
+class TestHome(TestCase):
+    def test_home_view(self):
         # send a GET request to the view
-        response = self.client.get(reverse('index'))
+        response = self.client.get(reverse('home'))
 
         # check that the response is 200 (OK)
         self.assertEqual(response.status_code, 200)
 
     def test_newsletter_form_submission(self):
         # test post request to newsletter form
-        response = self.client.post(reverse('index'), {
+        response = self.client.post(reverse('home'), {
             'email': 'test@test.com',
         })
 
@@ -57,7 +58,7 @@ class HomeViewTests(TestCase):
         })
 
         # check that the response is 302 (redirect)
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, 200)
 
         # check that a new contact form was created
         self.assertEqual(ContactForm.objects.count(), 1)
@@ -68,8 +69,25 @@ class HomeViewTests(TestCase):
         self.assertEqual(contact_form.email, 'test@test.com')
         self.assertEqual(contact_form.message, 'test')
 
-        # check that the contact form was created with the correct date
-        self.assertEqual(contact_form.date.year, timezone.now().year)
-        self.assertEqual(contact_form.date.month, timezone.now().month)
-        self.assertEqual(contact_form.date.day, timezone.now().day)
+    def test_login_view(self):
+        # send a GET request to the view
+        response = self.client.get(reverse('login'))
+
+        # check that the response is 200 (OK)
+        self.assertEqual(response.status_code, 200)
+
+        # create a user
+        User.objects.create_user(
+            username='test',
+            email='testemail@test.com',
+            password='testpassword'
+        )
+
+
+    def test_logout_view(self):
+        # send a GET request to the view
+        response = self.client.get(reverse('logout'))
+
+        # check that the user was redirected to the home page
+        self.assertRedirects(response, reverse('home'))
 

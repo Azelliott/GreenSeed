@@ -35,19 +35,13 @@ Easily manage your store's products and orders with our custom-built admin inter
 
 * And more..
 
+### Technical Details
 
-### NOTE: This application is still under development
-Things to implement:
+Intent: To create an e-commerce platform for plant enthusiasts to easily buy a wide variety of plants and accessories.
 
-* Blog, tutorials
+Data: Data privacy is a top priority for us. We use all-auth for authentication and Stripe for payment processing to ensure the security of our customers' personal and financial information.
 
-* Much better CSS
-
-* Complete fixtures (Current one doesn't have images, for dev and testing default image is used)
-
-* Captcha or some other bot protection
-
-* Social login
+Security: Our platform implements security measures to ensure the protection of our customers' data. By using all-auth for authentication and Stripe for payment processing, we guarantee the security of all transactions on our platform.
 
 
 ### View the live preview [here](https://greenseed-azelliott.herokuapp.com/)
@@ -57,7 +51,7 @@ Things to implement:
  - [Project Description](#project-description)
  - [Look and Color Scheme](#look-and-color-scheme)
  - [Technologies Used](#technologies-used)
- - [Getting Started](#getting-started)
+ - [Deployment](#deployment)
  - [Features](#features)
 
 
@@ -81,7 +75,7 @@ This project is built with the following technologies:
 * [PostgreSQL](https://www.postgresql.org/) - Database Engine
 * [Stripe](https://stripe.com/) - Payment System
 
-## Getting Started
+## Deployment
 
 These instructions will get you a copy of GreenSeed up and running on your local machine for development and testing purposes.
 
@@ -91,7 +85,6 @@ These instructions will get you a copy of GreenSeed up and running on your local
 * PostgreSQL
 
 ### Installation
-
 
 
 Clone the repository
