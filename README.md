@@ -43,6 +43,7 @@ Data: Data privacy is a top priority for us. We use all-auth for authentication 
 
 Security: Our platform implements security measures to ensure the protection of our customers' data. By using all-auth for authentication and Stripe for payment processing, we guarantee the security of all transactions on our platform.
 
+[DB Diagram](/documents/diagram.md)
 
 ### View the live preview [here](https://greenseed-azelliott.herokuapp.com/)
 (NOTE: Hold Ctrl and click the link to open in new tab)
