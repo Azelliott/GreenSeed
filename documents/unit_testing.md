@@ -34,3 +34,28 @@
 * Check that the view returns the correct user
 
 ![Screenshot of GreenSeed website](../static/image/unit_testing/unit-test-profiles.png)
+
+
+### Shop App {#shop-app}
+
+#### Shop view
+
+* Send a GET request to the view
+
+* Check that the response is 200 (OK)
+
+* Check that the view returns the correct template
+
+#### Product Detail view
+
+* Create a product
+
+* Send a GET request to the view
+
+* Check that the response is 200 (OK)
+
+* Check that the view returns the correct product
+
+* Check that the view returns the correct template
+
+![Screenshot of GreenSeed website](../static/image/unit_testing/unit-test-shop.png)

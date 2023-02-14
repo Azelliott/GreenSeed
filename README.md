@@ -367,5 +367,6 @@ python3 manage.py test app_name.tests
 
 [Profiles App](/documents/unit_testing.md#profiles-app-profiles-app) page
 
+[Shop App](/documents/unit_testing.md#shop-app-shop-app) page
 
 Site images found on [Unsplash](https://unsplash.com/)
