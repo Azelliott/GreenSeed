@@ -150,7 +150,7 @@ In Gitpod you have superuser security privileges by default. Therefore you do no
 ### App Overview
 
 
-### Main site navigation
+### Navigation and Functionality
 <details>
    <summary>Home</summary>
 
@@ -209,7 +209,7 @@ Contact page contains the address, email and phone number of the company, it als
 <details>
    <summary>Shop</summary>
 
-#### Landing Page
+### Landing Page
 
 Shop landing page has three main sections, top contains large hero image and search bar to help users quickly find what they need.
 
@@ -244,6 +244,10 @@ Review consists of message and a rating, total rating is calculated as a median 
 
 ![Screenshot of GreenSeed website](static/image/screenshots/leave-a-review.png)
 
+Write a review and leave a rating.
+
+![Screenshot of GreenSeed website](static/image/screenshots/write-review.png)
+
 In case the already reviewed the product, insted of the button they will see a timestamp.
 
 ![Screenshot of GreenSeed website](static/image/screenshots/reviews.png)
@@ -258,7 +262,7 @@ Users can add products to cart either directly from the main product listing or 
 There is an option to increase or decrease product quantity inside the cart, before checkout.
 
 Total price is calculated on the fly taking into the account eligibility for a free shipping if the total order is larger than 50 euros.
-Price shows the price of the single item and total price is calculated on the fly depending on the ammounts of particular item.
+Price shows the price of the single item and total price is calculated on the fly depending on the ammount of particular item.
 
 ![Screenshot of GreenSeed website](static/image/screenshots/cart.png)
 
@@ -271,7 +275,7 @@ Checkout page contains the order summary and a form to fill out the payment and 
 
 ![Screenshot of GreenSeed website](static/image/screenshots/checkout.png)
 
-Payments are using Stripe Developement API, to quickly test the functionality you can fill the payment info with number 42 like shown below
+Payments are done via Stripe Developement API, to quickly test the functionality you can fill the payment info with number 42 like shown below.
 
 ![Screenshot of GreenSeed website](static/image/screenshots/checkout-payment_info.png)
 
@@ -289,6 +293,37 @@ Confirmation email containing this information is automatically sent to email th
 My Account page contains the user information and provides a list of previous purchases. If the user clicks on the order number it will take them to a complete order summary.
 
 ![Screenshot of GreenSeed website](static/image/screenshots/my-account.png)
+
+</details>
+
+<details>
+   <summary>Add Product</summary>
+
+If a user is admin he will have a "Manage" link in the header which will take him/her to the Add Product page.
+
+Header
+
+![Screenshot of GreenSeed website](static/image/screenshots/header-manage.png)
+
+
+Add Product
+
+![Screenshot of GreenSeed website](static/image/screenshots/add-product.png)
+
+</details>
+
+<details>
+   <summary>Login and Logout</summary
+
+all-auth is used for user authentication
+
+Login
+
+![Screenshot of GreenSeed website](static/image/screenshots/login.png)
+
+Logout
+
+![Screenshot of GreenSeed website](static/image/screenshots/logout.png)
 
 
 </details>
