@@ -147,10 +147,10 @@ In Gitpod you have superuser security privileges by default. Therefore you do no
 
 ## Features
 
-### Site Overview
+### App Overview
 
 
-### Main site
+### Main site navigation
 <details>
    <summary>Home</summary>
 
@@ -208,8 +208,44 @@ Contact page contains the address, email and phone number of the company, it als
 <details>
    <summary>Shop</summary>
 
-![Screenshot of GreenSeed website](static/image/screenshots/shop-main.png)
-![Screenshot of GreenSeed website](static/image/screenshots/shop-main_2.png)
+#### Landing Page
+
+Shop landing page has three main sections, top contains large hero image and search bar to help users quickly find what they need.
+
+![Screenshot of GreenSeed website](static/image/screenshots/shop-main-top.png)
+
+Middle section lists different collections (groups) of plants users might be interested in.
+
+![Screenshot of GreenSeed website](static/image/screenshots/shop-main-middle.png)
+
+Bottom part of the site has a big image of current limited time offer and information on shipping and support.
+
+![Screenshot of GreenSeed website](static/image/screenshots/shop-main-bottom.png)
+
+### All Products
+
+Product page contains the product listing, it's possible to fliter products by groups or use the search to quickly find what you need. Search works for product names, groups and description. Each product is shown in a card with image, price, short description, stock availability and rating. If the user is admin then each card also contains a link to edit or delete the product like shown below.
+
+![Screenshot of GreenSeed website](static/image/screenshots/shop-all_products.png)
+
+### Product Details
+
+Product details page gives the full product description, bigger image, price, stock availability and rating. It also shows product reviews.
+
+![Screenshot of GreenSeed website](static/image/screenshots/shop-product_details.png)
+
+
+### Reviews
+
+Users can only review only if they bought the product.
+If they did, a button to leave a review will show up.
+
+![Screenshot of GreenSeed website](static/image/screenshots/leave-a-review.png)
+
+In case the already reviewed the product, insted of the button they will see a timestamp.
+
+![Screenshot of GreenSeed website](static/image/screenshots/reviews.png)
+
 
 </details>
 
