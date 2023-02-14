@@ -193,6 +193,7 @@ At the bottom of the page is a counter section which provides the visitors some 
 
 ![Screenshot of GreenSeed website](static/image/screenshots/about-counter.png)
 
+
 </details>
 
 <details>
@@ -237,14 +238,57 @@ Product details page gives the full product description, bigger image, price, st
 
 ### Reviews
 
-Users can only review only if they bought the product.
+Users can only leave a review if they bought the product.
 If they did, a button to leave a review will show up.
+Review consists of message and a rating, total rating is calculated as a median of all user ratings.
 
 ![Screenshot of GreenSeed website](static/image/screenshots/leave-a-review.png)
 
 In case the already reviewed the product, insted of the button they will see a timestamp.
 
 ![Screenshot of GreenSeed website](static/image/screenshots/reviews.png)
+
+
+</details>
+
+<details>
+   <summary>Cart</summary>
+
+Users can add products to cart either directly from the main product listing or from product details page. There is a messaging system implemented so users can see if the product was added or removed successfully.
+There is an option to increase or decrease product quantity inside the cart, before checkout.
+
+Total price is calculated on the fly taking into the account eligibility for a free shipping if the total order is larger than 50 euros.
+Price shows the price of the single item and total price is calculated on the fly depending on the ammounts of particular item.
+
+![Screenshot of GreenSeed website](static/image/screenshots/cart.png)
+
+</details>
+
+<details>
+   <summary>Checkout</summary>
+
+Checkout page contains the order summary and a form to fill out the payment and shipping details. Users have the option to save that information to their profile so the process isfaster in the future. If they have a profile on the site then the form will be prefilled with their info.
+
+![Screenshot of GreenSeed website](static/image/screenshots/checkout.png)
+
+Payments are using Stripe Developement API, to quickly test the functionality you can fill the payment info with number 42 like shown below
+
+![Screenshot of GreenSeed website](static/image/screenshots/checkout-payment_info.png)
+
+Once the order is finalized, users will be taken to a order summary. This will show them their order number as well as other details concerning order.
+Confirmation email containing this information is automatically sent to email the user provided.
+
+![Screenshot of GreenSeed website](static/image/screenshots/checkout-complete.png)
+
+
+</details>
+
+<details>
+   <summary>My Account</summary>
+
+My Account page contains the user information and provides a list of previous purchases. If the user clicks on the order number it will take them to a complete order summary.
+
+![Screenshot of GreenSeed website](static/image/screenshots/my-account.png)
 
 
 </details>
