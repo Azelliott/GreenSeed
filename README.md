@@ -357,7 +357,7 @@ This project has been tested on the following operating systems and browsers:
 
 ### Unit Testing
 Each app has it's own testing folder.
-To run the tests type into terminal:
+To run the tests locally type into terminal:
 
 ```
 python3 manage.py test app_name.tests
@@ -368,5 +368,7 @@ python3 manage.py test app_name.tests
 [Profiles App](/documents/unit_testing.md#profiles-app-profiles-app) page
 
 [Shop App](/documents/unit_testing.md#shop-app-shop-app) page
+
+[Reviews App](/documents/unit_testing.md#reviews-app-reviews-app) page
 
 Site images found on [Unsplash](https://unsplash.com/)
