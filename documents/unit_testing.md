@@ -108,3 +108,15 @@
 * Check that a new product was created
 
 ![Screenshot of GreenSeed website](../static/image/unit_testing/unit-test-managenent.png)
+
+
+#### Checkout app {#checkout-app}
+
+* send a GET request to the cart view
+
+* Check that the response is 200 (OK)
+
+* Check that the view returns the correct template
+
+
+![Screenshot of GreenSeed website](../static/image/unit_testing/unit-test-checkout.png)
