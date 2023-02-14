@@ -12,6 +12,7 @@ In addition, we are proud to support the GreenSeed Foundation, which sponsors re
 
 So why wait? Start exploring the world of plants today with GreenSeed. We can't wait to help you bring a little bit of nature into your life.
 
+Check out our [Facebook](/documents/facebook.md) page
 
 ## Project Description
 GreenSeed is a full-featured e-commerce platform for buying and selling all kinds of plants and accessories. Built with Django and Bootstrap, it offers a sleek and intuitive interface for browsing and purchasing products.
