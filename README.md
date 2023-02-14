@@ -363,7 +363,9 @@ To run the tests type into terminal:
 python3 manage.py test app_name.tests
 ```
 
+[Home App](/documents/unit_testing.md#home-app-home-app) page
 
+[Profiles App](/documents/unit_testing.md#profiles-app-profiles-app) page
 
 
 Site images found on [Unsplash](https://unsplash.com/)

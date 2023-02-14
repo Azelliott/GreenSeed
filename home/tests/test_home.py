@@ -83,11 +83,9 @@ class TestHome(TestCase):
             password='testpassword'
         )
 
-
     def test_logout_view(self):
         # send a GET request to the view
         response = self.client.get(reverse('logout'))
 
         # check that the user was redirected to the home page
         self.assertRedirects(response, reverse('home'))
-
