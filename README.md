@@ -371,4 +371,6 @@ python3 manage.py test app_name.tests
 
 [Reviews App](/documents/unit_testing.md#reviews-app-reviews-app) page
 
+[Reviews App](/documents/unit_testing.md#management-app-management-app) page
+
 Site images found on [Unsplash](https://unsplash.com/)

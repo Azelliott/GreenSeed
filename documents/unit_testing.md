@@ -81,3 +81,30 @@
 * Check that the correct error message was returned
 
 ![Screenshot of GreenSeed website](../static/image/unit_testing/unit-test-reviews.png)
+
+
+#### Management app {#management-app}
+
+* Test management view
+
+* Log in as regular user
+
+* Send a GET request to the view
+
+* Check that the response is 302 (Forbidden)
+
+* Test admin login
+
+* Send a GET request to the view
+
+* Check that the response is 200 (OK)
+
+* Test add product view
+
+* Send a GET request to the view
+
+* Check that the response is 200 (OK)
+
+* Check that a new product was created
+
+![Screenshot of GreenSeed website](../static/image/unit_testing/unit-test-managenent.png)

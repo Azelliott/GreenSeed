@@ -10,7 +10,7 @@ from shop.models import Product
 class TestReviews(TestCase):
     # create a user
     def setUp(self):
-        user= User.objects.create_user(
+        user = User.objects.create_user(
             username='testuser',
             password='testpassword'
         )
