@@ -65,6 +65,8 @@ In addition to the main colors, GreenSeed also uses wavy, organic lines to add a
 
 Overall, the color scheme of GreenSeed is meant to convey the company's commitment to nature and sustainability, while also providing a visually appealing and calming shopping experience for customers.
 
+[Wireframes](/documents/wireframes.md)
+
 ## Technologies Used
 
 ### Core Technologies
