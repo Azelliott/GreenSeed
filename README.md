@@ -150,7 +150,9 @@ In Gitpod you have superuser security privileges by default. Therefore you do no
 ### Site Overview
 
 
-### Home
+### Main site
+<details>
+   <summary>Home</summary>
 
 Home page is has clean design with a button that leads to the web shop.
 
@@ -163,9 +165,11 @@ There are several svg graphics that tell the users benefits of plants:
 At the bottom there is an option to subscribe to newsletter
 
 ![Screenshot of GreenSeed website](static/image/screenshots/newsletter.png)
+</details>
 
 
-### Our Plants
+<details>
+   <summary>Our Plants</summary>
 
 Our plants page contains several pictures and descriptions of how the company sustainably grows and sources their plants.
 
@@ -175,24 +179,39 @@ It also contains few cards with descriptions of popular plants
 
 ![Screenshot of GreenSeed website](static/image/screenshots/plant-description.png)
 
-### About Us
+</details>
 
+
+<details>
+   <summary>About Us</summary>
+
+About us page contains brief history of the company, it also explains company mission and values.
 
 ![Screenshot of GreenSeed website](static/image/screenshots/home-about_us.png)
 
+At the bottom of the page is a counter section which provides the visitors some business metrics.
 
-### Contact
+![Screenshot of GreenSeed website](static/image/screenshots/about-counter.png)
 
+</details>
+
+<details>
+   <summary>Contact</summary>
+
+Contact page contains the address, email and phone number of the company, it also contains the form to get in touch for any questions the users might have.
 
 ![Screenshot of GreenSeed website](static/image/screenshots/home-contact.png)
 
-### Shop
+</details>
 
+
+<details>
+   <summary>Shop</summary>
 
 ![Screenshot of GreenSeed website](static/image/screenshots/shop-main.png)
 ![Screenshot of GreenSeed website](static/image/screenshots/shop-main_2.png)
 
-
+</details>
 
 ## Testing and Validation
 
