@@ -147,18 +147,33 @@ In Gitpod you have superuser security privileges by default. Therefore you do no
 
 ## Features
 
-### Overview
+### Site Overview
 
 
 ### Home
 
+Home page is has clean design with a button that leads to the web shop.
 
 ![Screenshot of GreenSeed website](static/image/screenshots/home-index.png)
 
+There are several svg graphics that tell the users benefits of plants:
+
+![Screenshot of GreenSeed website](static/image/screenshots/home-svg.png)
+
+At the bottom there is an option to subscribe to newsletter
+
+![Screenshot of GreenSeed website](static/image/screenshots/newsletter.png)
+
+
 ### Our Plants
 
+Our plants page contains several pictures and descriptions of how the company sustainably grows and sources their plants.
 
 ![Screenshot of GreenSeed website](static/image/screenshots/home-our_plants.png)
+
+It also contains few cards with descriptions of popular plants
+
+![Screenshot of GreenSeed website](static/image/screenshots/plant-description.png)
 
 ### About Us
 
